@@ -68,7 +68,9 @@ void Game::play()
                         std::cout << "Quitting Game." << std::endl;
                         return;
                     case 's':
-                        
+                        (m_world->stats()).display();
+                        std::cout << "Press enter to continue.";
+                        std::cin.ignore(10000, '\n');
                         continue;
                     case ' ':
                         

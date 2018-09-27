@@ -64,6 +64,7 @@ void World::print() const {
     }
     std::cout << std::endl;
 }
+
 bool World::hasWorldChanged() const {
     
     for (char i = 0; i < MAX_ROWS; i++) {
@@ -77,12 +78,20 @@ bool World::hasWorldChanged() const {
     }
     return false;
 }
+
+Stats& World::stats() {
+    return m_stats;
+}
+
 void World::update() {
     if (m_toggle) {
         for (char i = 0; i < MAX_ROWS; i++) {
             for (char j = 0; j < MAX_COLS; j++) {
                 m_otherWorld[i][j] =
                 _getState(m_world[i][j], i, j, m_toggle);
+                if ((m_otherWorld[i][j] == ALIVE) && (m_world[i][j] == DEAD)) {
+                    (stats()).record(i, j, 1);
+                }
             }
         }
         m_toggle = !m_toggle;
@@ -92,6 +101,9 @@ void World::update() {
             for (char j = 0; j < MAX_COLS; j++) {
                 m_world[i][j] =
                 _getState(m_otherWorld[i][j], i, j, m_toggle);
+                if ((m_world[i][j] == ALIVE) && (m_otherWorld[i][j] == DEAD)) {
+                    (stats()).record(i, j, 1);
+                }
             }
         }
         m_toggle = !m_toggle;

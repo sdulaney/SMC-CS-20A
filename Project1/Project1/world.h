@@ -7,6 +7,8 @@
 #ifndef world_h
 #define world_h
 
+#include "stats.h"
+
 class Life;
 
 class World {
@@ -18,7 +20,7 @@ public:
     // Accessors or Getters
     void print() const;
     bool hasWorldChanged() const;
-    
+    Stats& stats(); // get the stats object
     
     // Mutators or Setters
     bool addLife(Life *life);
@@ -36,7 +38,7 @@ private:
     char **m_world;
     char **m_otherWorld;
     bool m_toggle;
-    
+    Stats m_stats;
     
 };
 
