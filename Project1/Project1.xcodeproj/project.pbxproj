@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8D8028EA215715E500638050 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D8028E9215715E500638050 /* main.cpp */; };
+		8D8028F721571BB700638050 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D8028F621571BB700638050 /* utils.cpp */; };
+		8D8028FA2157202D00638050 /* life.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D8028F82157202D00638050 /* life.cpp */; };
+		8D8028FD215720BF00638050 /* blinker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D8028FB215720BF00638050 /* blinker.cpp */; };
+		8D8029002157211000638050 /* glider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D8028FE2157211000638050 /* glider.cpp */; };
+		8D8029032157214D00638050 /* world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D8029012157214D00638050 /* world.cpp */; };
+		8D8029062157218D00638050 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D8029042157218D00638050 /* game.cpp */; };
+		8DFA4EA62159712B00043DE8 /* stats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA4EA42159712B00043DE8 /* stats.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,20 @@
 /* Begin PBXFileReference section */
 		8D8028E6215715E500638050 /* Project1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project1; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8028E9215715E500638050 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8D8028F421571B6200638050 /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
+		8D8028F621571BB700638050 /* utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
+		8D8028F82157202D00638050 /* life.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = life.cpp; sourceTree = "<group>"; };
+		8D8028F92157202D00638050 /* life.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = life.h; sourceTree = "<group>"; };
+		8D8028FB215720BF00638050 /* blinker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = blinker.cpp; sourceTree = "<group>"; };
+		8D8028FC215720BF00638050 /* blinker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blinker.h; sourceTree = "<group>"; };
+		8D8028FE2157211000638050 /* glider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = glider.cpp; sourceTree = "<group>"; };
+		8D8028FF2157211000638050 /* glider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glider.h; sourceTree = "<group>"; };
+		8D8029012157214D00638050 /* world.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = world.cpp; sourceTree = "<group>"; };
+		8D8029022157214D00638050 /* world.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = world.h; sourceTree = "<group>"; };
+		8D8029042157218D00638050 /* game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
+		8D8029052157218D00638050 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		8DFA4EA42159712B00043DE8 /* stats.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stats.cpp; sourceTree = "<group>"; };
+		8DFA4EA52159712B00043DE8 /* stats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stats.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,20 @@
 			isa = PBXGroup;
 			children = (
 				8D8028E9215715E500638050 /* main.cpp */,
+				8D8029042157218D00638050 /* game.cpp */,
+				8D8029052157218D00638050 /* game.h */,
+				8D8029012157214D00638050 /* world.cpp */,
+				8D8029022157214D00638050 /* world.h */,
+				8D8028FE2157211000638050 /* glider.cpp */,
+				8D8028FF2157211000638050 /* glider.h */,
+				8D8028FB215720BF00638050 /* blinker.cpp */,
+				8D8028FC215720BF00638050 /* blinker.h */,
+				8D8028F82157202D00638050 /* life.cpp */,
+				8D8028F92157202D00638050 /* life.h */,
+				8D8028F421571B6200638050 /* globals.h */,
+				8D8028F621571BB700638050 /* utils.cpp */,
+				8DFA4EA42159712B00043DE8 /* stats.cpp */,
+				8DFA4EA52159712B00043DE8 /* stats.h */,
 			);
 			path = Project1;
 			sourceTree = "<group>";
@@ -119,6 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8028EA215715E500638050 /* main.cpp in Sources */,
+				8DFA4EA62159712B00043DE8 /* stats.cpp in Sources */,
+				8D8028F721571BB700638050 /* utils.cpp in Sources */,
+				8D8029062157218D00638050 /* game.cpp in Sources */,
+				8D8028FA2157202D00638050 /* life.cpp in Sources */,
+				8D8029002157211000638050 /* glider.cpp in Sources */,
+				8D8029032157214D00638050 /* world.cpp in Sources */,
+				8D8028FD215720BF00638050 /* blinker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
