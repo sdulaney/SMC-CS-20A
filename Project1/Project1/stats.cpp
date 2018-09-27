@@ -32,14 +32,7 @@ Stats::~Stats() {
 void Stats::display() const {
     for (char i = 0; i < MAX_ROWS; i++) {
         for (char j = 0; j < MAX_COLS; j++) {
-            // If the cell contains '.', use the insertion operator (<<) overloaded for char
-            if (m_stats[i][j] == DEAD) {
                 std::cout << m_stats[i][j];
-            }
-            // If the cell contains '1' through '9', use the insertion operator (<<) overloaded for int
-            else {
-                std::cout << static_cast<int>(m_stats[i][j]);
-            }
         }
         std::cout << std::endl;
     }
@@ -48,8 +41,9 @@ void Stats::display() const {
 
 bool Stats::record(int r, int c, int val) {
     int currentValue;
-    (m_stats[r][c] == DEAD) ? (currentValue = 0) : (currentValue = static_cast<int>(m_stats[r][c]));
-    if ((currentValue + val) <= 9) {
+    (m_stats[r][c] == DEAD) ? (currentValue = 48) : (currentValue = static_cast<int>(m_stats[r][c]));
+    // If the sum of val and the current value is less than '9'
+    if ((currentValue + val) <= 57) {
         m_stats[r][c] = static_cast<char>(currentValue + val);
         return true;
     }
