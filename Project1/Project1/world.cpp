@@ -89,6 +89,8 @@ void World::update() {
             for (char j = 0; j < MAX_COLS; j++) {
                 m_otherWorld[i][j] =
                 _getState(m_world[i][j], i, j, m_toggle);
+                // If the cell is ALIVE in the next state (m_otherWorld) and is DEAD
+                // in the current state (m_world), then record a birth.
                 if ((m_otherWorld[i][j] == ALIVE) && (m_world[i][j] == DEAD)) {
                     (stats()).record(i, j, 1);
                 }
@@ -101,6 +103,8 @@ void World::update() {
             for (char j = 0; j < MAX_COLS; j++) {
                 m_world[i][j] =
                 _getState(m_otherWorld[i][j], i, j, m_toggle);
+                // If the cell is ALIVE in the next state (m_world) and is DEAD
+                // in the current state (m_otherWorld), then record a birth.
                 if ((m_world[i][j] == ALIVE) && (m_otherWorld[i][j] == DEAD)) {
                     (stats()).record(i, j, 1);
                 }

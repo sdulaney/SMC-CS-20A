@@ -41,8 +41,10 @@ void Stats::display() const {
 
 bool Stats::record(int r, int c, int val) {
     int currentValue;
+    // If the cell contains '.', set currentValue to '0'. Otherwise, use the value the cell
+    // contains ('1' through '9').
     (m_stats[r][c] == DEAD) ? (currentValue = 48) : (currentValue = static_cast<int>(m_stats[r][c]));
-    // If the sum of val and the current value is less than '9'
+    // If the sum of val and currentValue is less than or equal to '9'
     if ((currentValue + val) <= 57) {
         m_stats[r][c] = static_cast<char>(currentValue + val);
         return true;
