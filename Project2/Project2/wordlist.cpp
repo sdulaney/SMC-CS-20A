@@ -36,9 +36,18 @@ using std::strlen;
 *	and the other member variables should be made consitent with this state.  
 */
 WordList::WordList(const int max_words) {
-
-	// TODO:
-
+    m_count = 0;
+    if (max_words < 1) {
+        m_max_words = 0;
+        m_list = nullptr;
+    }
+    else {
+        m_max_words = max_words;
+        m_list = new char*[m_max_words];
+        for (int i = 0; i < m_max_words; i++) {
+            m_list[i] = new char[20];
+        }
+    }
 }
 
 
