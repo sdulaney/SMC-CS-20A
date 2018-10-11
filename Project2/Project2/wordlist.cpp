@@ -122,10 +122,37 @@ int	WordList::getCount() const {
 *	return -2.  
 */
 int	WordList::addWord(const char word[]) {
-
-	// TODO
-	return -2;
-
+    int result = 0;
+    if (word[0] == '\0') {
+        return -1;
+    }
+    if (m_count == m_max_words) {
+        if (m_list == nullptr) {
+            result = -2;
+        }
+        else {
+            result = 1;
+        }
+        int temp_max_words = m_max_words + 1;
+        char** temp = new char*[temp_max_words];
+        for (int i = 0; i < temp_max_words; i++) {
+            temp[i] = new char[20];
+        }
+        for (int i = 0; i < m_count; i++) {
+            // Assumes words will be no more than 19 characters in length (+1 for the null character)
+            strcpy(temp[i], m_list[i]);
+        }
+        for (int i = 0; i < m_max_words; i++) {
+            delete [] m_list[i];
+        }
+        delete [] m_list;
+        m_list = temp;
+        m_max_words = temp_max_words;
+    }
+    // Assumes words will be no more than 19 characters in length (+1 for the null character)
+    strcpy(m_list[m_count], word);
+    m_count++;
+    return result;
 }
 
 
