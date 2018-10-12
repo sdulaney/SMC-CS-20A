@@ -67,9 +67,10 @@ WordList::WordList(const WordList &other) {
 *	Cleans up WordList's dynamically allocated memory.
 */
 WordList::~WordList() {
-
-	// TODO:
-
+    for (int i = 0; i < m_max_words; i++) {
+        delete [] m_list[i];
+    }
+    delete [] m_list;
 }
 
 /* Function: printList
