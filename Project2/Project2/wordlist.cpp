@@ -79,10 +79,20 @@ WordList::~WordList() {
 *	of words printed.  If m_list is nullptr there is nothing to print, return -1. 
 */
 int	WordList::printList() const {
-
-	// TODO: 
-	return -1;
-
+    if (m_list == nullptr) {
+        return -1;
+    }
+    int count = 0;
+    for (int i = 0; i < m_count; i++) {
+        cout << m_list[i];
+        count++;
+        if (i == (m_count - 1)) {
+            break;
+        }
+        cout << " ";
+    }
+    cout << endl;
+    return count;
 }
 
 
