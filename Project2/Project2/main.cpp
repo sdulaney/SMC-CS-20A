@@ -136,8 +136,6 @@ int main() {
 
 	assert(strcmp(wordlist->m_list[1], "ron") == 0); // cstring, must use strcmp
     
-    // TODO: Write tests for return values of addWord
-    
     assert(wordlist->addWord("neville") == 0);
     assert(wordlist->addWord("") == -1);            // "" is a const char array containing a single \0 character
     assert(wordlist->addWord("draco") == 1);        // addWord needed to resize
@@ -161,7 +159,9 @@ int main() {
 	wordlist->addWord("ron");
 	wordlist->addWord("hermione");
 
-	wordlist->printList();
+	assert(wordlist->printList() == 3);             // returns the number of words printed
+    WordList *wordlist2 = new WordList(0);
+    assert(wordlist2->printList() == -1);           // returns -1 because m_list is equal to nullptr
 
 	return 0;
 }
