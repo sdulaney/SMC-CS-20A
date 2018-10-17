@@ -56,9 +56,21 @@ WordList::WordList(const int max_words) {
 *	Constructs a Wordlist that is a copy of an existing WordList
 */
 WordList::WordList(const WordList &other) {
-
-	// TODO:
-
+    m_count = other.m_count;
+    m_max_words = other.m_max_words;
+    if (m_max_words < 1) {
+        m_list = nullptr;
+    }
+    else {
+        m_list = new char*[m_max_words];
+        for (int i = 0; i < m_max_words; i++) {
+            m_list[i] = new char[20];
+        }
+        for (int i = 0; i < m_count; i++) {
+            // Assumes words will be no more than 19 characters in length (+1 for the null character)
+            strcpy(m_list[i], other.m_list[i]);
+        }
+    }
 }
 
 
