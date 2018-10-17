@@ -30,7 +30,7 @@ using std::strlen;
 */
 
 // Choose which test to compile
-#define TEST7 //TEST1 TEST2 TEST3 TEST4
+#define TEST8 //TEST1 TEST2 TEST3 TEST4
 
 
 
@@ -216,6 +216,39 @@ int main() {
     assert(strcmp(wordlist->getAt(0), "Where") == 0);
     assert(strcmp(wordlist->getAt(1), "Is") == 0);
     assert(strcmp(wordlist->getAt(2), "Waldo") == 0);
+    
+    return 0;
+}
+
+#elif defined TEST8
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"wordlist.h"
+
+// Test removeWord. Constructor, addWord, and getAd must be implmented prior to running
+// this code, otherwise it will crash.
+int main() {
+    WordList *wordlist = new WordList(5);
+    wordlist->addWord("Where");
+    wordlist->addWord("Is");
+    wordlist->addWord("Waldo");
+    wordlist->addWord("Where");
+    wordlist->addWord("Where");
+    assert(wordlist->getCount() == 5);
+    
+    assert(wordlist->removeWord("Is") == 1);
+    assert(strcmp(wordlist->getAt(0), "Where") == 0);
+    assert(strcmp(wordlist->getAt(1), "Waldo") == 0);
+    assert(strcmp(wordlist->getAt(2), "Where") == 0);
+    assert(strcmp(wordlist->getAt(3), "Where") == 0);
+    assert(wordlist->getCount() == 4);
+    
+    assert(wordlist->removeWord("Where") == 3);
+    assert(strcmp(wordlist->getAt(0), "Waldo") == 0);
+    assert(wordlist->getCount() == 1);
+    
+    WordList *wordlist2 = new WordList(0);
+    assert(wordlist2->removeWord("Is") == -1);           // m_list is nullptr
     
     return 0;
 }
