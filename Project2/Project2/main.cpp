@@ -350,7 +350,7 @@ int main() {
     wordlist->addWord("Islington");
     wordlist->addWord("Abbot");
     
-    WordList wordlist2 = WordList(2);
+    WordList wordlist2(2);
     wordlist2 = *wordlist;
     assert(wordlist2.getAt(0) != wordlist->getAt(0));         // ensure wordlist2 and wordlist point to different m_list's in memory
     assert(strcmp(wordlist2.getAt(0), "Richard") == 0);
@@ -359,8 +359,8 @@ int main() {
     assert(strcmp(wordlist2.getAt(3), "Islington") == 0);
     assert(strcmp(wordlist2.getAt(4), "Abbot") == 0);
     
-    WordList wordlist3 = WordList(0);                       // m_list is nullptr
-    WordList wordlist4 = WordList(5);
+    WordList wordlist3(0);                       // m_list is nullptr
+    WordList wordlist4(5);
     wordlist4 = wordlist3;
     assert(wordlist4.getCount() == 0);
     assert(wordlist4.removeWord("testing") == -1);          // ensure m_list is also nullptr for wordlist4
