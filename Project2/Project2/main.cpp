@@ -297,6 +297,43 @@ int main() {
     return 0;
 }
 
+#elif defined TEST10
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"wordlist.h"
+
+// Test Copy Constructor. Constructor, addWord, and getAt must be implemented prior to running
+// this code, otherwise it will crash.
+int main() {
+    WordList *wordlist = new WordList(5);
+    wordlist->addWord("Richard");
+    wordlist->addWord("Door");
+    wordlist->addWord("Carabas");
+    wordlist->addWord("Islington");
+    wordlist->addWord("Abbot");
+    
+    WordList wordlist2(*wordlist);
+    assert(wordlist2.getCount() == 5);
+    assert(wordlist2.getAt(0) != wordlist.getAt(0));        // ensure wordlist2 and wordlist point to different m_list's in memory
+    assert(strcmp(wordlist2.getAt(0), "Richard") == 0);
+    assert(strcmp(wordlist2.getAt(1), "Door") == 0);
+    assert(strcmp(wordlist2.getAt(2), "Carabas") == 0);
+    assert(strcmp(wordlist2.getAt(3), "Islington") == 0);
+    assert(strcmp(wordlist2.getAt(4), "Abbot") == 0);
+    
+    WordList *wordlist3 = new WordList(0);
+    WordList wordlist4(*wordlist3);
+    assert(wordlist4.getCount() == 0);
+    assert(wordlist4.removeWord("testing") == -1);          // m_list is nullptr
+    
+    WordList *wordlist5 = new WordList(1);
+    wordlist5->addWord("Richard");
+    WordList wordlist6(*wordlist5);
+    assert(wordlist6.getCount() == 1);
+    assert(strcmp(wordlist5.getAt(0), "Richard") == 0);
+    
+    return 0;
+}
 
 #else
 
