@@ -259,18 +259,33 @@ int WordList::findWord(const char word[]) const {
 }
 
 
-/* Funtion: sortList
+/* Function: sortList
 *
-*	If m_list is null return -1.  If there is only one word
+*	If m_list is nullptr return -1.  If there is only one word
 *	in the list return 1.  Otherwise, sortList sorts the
 *	words in WordList in ascending order.  Returns 0 on
 *	success.
 */
 int	WordList::sortList() {
-
-	// TODO:
-	return -1;
-
+    if (m_list == nullptr) {
+        return -1;
+    }
+    if (m_count == 1) {
+        return 1;
+    }
+    // Use Bubble Sort algorithm
+    for (int i = m_count - 1; i > 0; i--) {
+        for (int j = 0; j < i; j++) {
+            if (strcmp(m_list[j], m_list[j + 1]) > 0) {
+                // Swap the words
+                char temp[20];
+                strcpy(temp, m_list[j + 1]);
+                strcpy(m_list[j + 1], m_list[j]);
+                strcpy(m_list[j], temp);
+            }
+        }
+    }
+    return 0;
 }
 
 
