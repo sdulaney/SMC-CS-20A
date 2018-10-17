@@ -116,10 +116,7 @@ char* WordList::getAt(const int index) const {
 *	Returns the number of words currently stored in WordList.
 */
 int	WordList::getCount() const {
-
-	// TODO: 
-	return -1;
-
+    return m_count;
 }
 
 
