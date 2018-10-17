@@ -30,7 +30,7 @@ using std::strlen;
 */
 
 // Choose which test to compile
-#define TEST9 //TEST1 TEST2 TEST3 TEST4
+#define TEST10 //TEST1 TEST2 TEST3 TEST4
 
 
 
@@ -314,7 +314,7 @@ int main() {
     
     WordList wordlist2(*wordlist);
     assert(wordlist2.getCount() == 5);
-    assert(wordlist2.getAt(0) != wordlist.getAt(0));        // ensure wordlist2 and wordlist point to different m_list's in memory
+    assert(wordlist2.getAt(0) != wordlist->getAt(0));        // ensure wordlist2 and wordlist point to different m_list's in memory
     assert(strcmp(wordlist2.getAt(0), "Richard") == 0);
     assert(strcmp(wordlist2.getAt(1), "Door") == 0);
     assert(strcmp(wordlist2.getAt(2), "Carabas") == 0);
@@ -330,7 +330,7 @@ int main() {
     wordlist5->addWord("Richard");
     WordList wordlist6(*wordlist5);
     assert(wordlist6.getCount() == 1);
-    assert(strcmp(wordlist5.getAt(0), "Richard") == 0);
+    assert(strcmp(wordlist6.getAt(0), "Richard") == 0);
     
     return 0;
 }
