@@ -172,9 +172,23 @@ int	WordList::addWord(const char word[]) {
 *	the number of words removed.
 */
 int	WordList::removeWord(const char word[]) {
-    
-	// TODO:
-	return -1;
+    int result = -1;
+    if (m_list == nullptr) {
+        return result;
+    }
+    else {
+        result = 0;     // zero words removed
+    }
+    while (findWord(word) != -1) {
+        int index = findWord(word);
+        for (int i = index; i < m_count - 1; i++) {
+            // Assumes words will be no more than 19 characters in length (+1 for the null character)
+            strcpy(m_list[i], m_list[i + 1]);
+        }
+        m_count--;
+        result++;
+    }
+    return result;
 }
 
 
