@@ -189,10 +189,39 @@ int	WordList::removeWord(const char word[]) {
 *	holds but returns -2.
 */
 int	WordList::appendLists(const WordList* src_list) {
-
-	// TODO:
-	return -2;
-
+    int result = -1;
+    if ((src_list == nullptr) || (src_list->getCount() == 0)) {
+        return result;
+    }
+    if ((m_count + src_list->getCount()) > m_max_words) {
+        if (m_list == nullptr) {
+            result = -2;
+        }
+        else {
+            result = src_list->getCount();
+        }
+        int temp_max_words = m_count + src_list->getCount();
+        char** temp = new char*[temp_max_words];
+        for (int i = 0; i < temp_max_words; i++) {
+            temp[i] = new char[20];
+        }
+        for (int i = 0; i < m_count; i++) {
+            // Assumes words will be no more than 19 characters in length (+1 for the null character)
+            strcpy(temp[i], m_list[i]);
+        }
+        for (int i = 0; i < m_max_words; i++) {
+            delete [] m_list[i];
+        }
+        delete [] m_list;
+        m_list = temp;
+        m_max_words = temp_max_words;
+    }
+    for (int i = 0; i < src_list->getCount(); i++) {
+        // Assumes words will be no more than 19 characters in length (+1 for the null character)
+        strcpy(m_list[m_count], src_list->getAt(i));
+        m_count++;
+    }
+    return result;
 }
 
 
