@@ -30,7 +30,7 @@ using std::strlen;
 */
 
 // Choose which test to compile
-#define TEST8 //TEST1 TEST2 TEST3 TEST4
+#define TEST9 //TEST1 TEST2 TEST3 TEST4
 
 
 
@@ -225,7 +225,7 @@ int main() {
 //#define MAKE_MEMBERS_PUBLIC
 #include"wordlist.h"
 
-// Test removeWord. Constructor, addWord, and getAd must be implmented prior to running
+// Test removeWord. Constructor, addWord, and getAt must be implemented prior to running
 // this code, otherwise it will crash.
 int main() {
     WordList *wordlist = new WordList(5);
@@ -249,6 +249,50 @@ int main() {
     
     WordList *wordlist2 = new WordList(0);
     assert(wordlist2->removeWord("Is") == -1);           // m_list is nullptr
+    
+    return 0;
+}
+
+#elif defined TEST9
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"wordlist.h"
+
+// Test sortList. Constructor, addWord, and getAt must be implemented prior to running
+// this code, otherwise it will crash.
+int main() {
+    WordList *wordlist = new WordList(5);
+    wordlist->addWord("Richard");
+    wordlist->addWord("Door");
+    wordlist->addWord("Carabas");
+    wordlist->addWord("Islington");
+    wordlist->addWord("Abbot");
+    assert(wordlist->sortList() == 0);
+    assert(strcmp(wordlist->getAt(0), "Abbot") == 0);
+    assert(strcmp(wordlist->getAt(1), "Carabas") == 0);
+    assert(strcmp(wordlist->getAt(2), "Door") == 0);
+    assert(strcmp(wordlist->getAt(3), "Islington") == 0);
+    assert(strcmp(wordlist->getAt(4), "Richard") == 0);
+    
+    WordList *wordlist2 = new WordList(0);
+    assert(wordlist2->sortList() == -1);            // m_list is nullptr
+    
+    WordList *wordlist3 = new WordList(5);
+    wordlist3->addWord("testing");
+    assert(wordlist3->sortList() == 1);             // only one word in m_list
+    
+    WordList *wordlist4 = new WordList(5);
+    wordlist4->addWord("dog");
+    wordlist4->addWord("cat");
+    wordlist4->addWord("cAt");
+    wordlist4->addWord("dOg");
+    wordlist4->addWord("eagle");
+    assert(wordlist4->sortList() == 0);
+    assert(strcmp(wordlist4->getAt(0), "cAt") == 0);
+    assert(strcmp(wordlist4->getAt(1), "cat") == 0);
+    assert(strcmp(wordlist4->getAt(2), "dOg") == 0);
+    assert(strcmp(wordlist4->getAt(3), "dog") == 0);
+    assert(strcmp(wordlist4->getAt(4), "eagle") == 0);
     
     return 0;
 }
