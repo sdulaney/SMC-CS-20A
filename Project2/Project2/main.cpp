@@ -30,7 +30,7 @@ using std::strlen;
 */
 
 // Choose which test to compile
-#define TEST5 //TEST1 TEST2 TEST3 TEST4
+#define TEST7 //TEST1 TEST2 TEST3 TEST4
 
 
 
@@ -211,11 +211,11 @@ int main() {
     wordlist->addWord("Is");
     wordlist->addWord("Waldo");
     
-    assert(wordList->getAt(-1) == nullptr);             // index is out of bounds
-    assert(wordList->getAt(4) == nullptr);              // index is out of bounds
-    assert(strcmp(wordList->getAt(0), "Where") == 0);
-    assert(strcmp(wordList->getAt(1), "Is") == 0);
-    assert(strcmp(wordList->getAt(2), "Waldo") == 0);
+    assert(wordlist->getAt(-1) == nullptr);             // index is out of bounds
+    assert(wordlist->getAt(4) == nullptr);              // index is out of bounds
+    assert(strcmp(wordlist->getAt(0), "Where") == 0);
+    assert(strcmp(wordlist->getAt(1), "Is") == 0);
+    assert(strcmp(wordlist->getAt(2), "Waldo") == 0);
     
     return 0;
 }
