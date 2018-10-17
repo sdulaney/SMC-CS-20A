@@ -154,9 +154,9 @@ int main() {
 // this code, otherwise it will crash.
 int main() {
     WordList *wordlist = new WordList(4);
-    wordlist->addWord("Where")
-    wordlist->addWord("Is")
-    wordlist->addWord("Waldo")
+    wordlist->addWord("Where");
+    wordlist->addWord("Is");
+    wordlist->addWord("Waldo");
     
     assert(wordlist->findWord("waldo") == -1);
     assert(wordlist->findWord("Where") == 0);
