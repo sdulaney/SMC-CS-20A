@@ -30,7 +30,7 @@ using std::strlen;
 */
 
 // Choose which test to compile
-#define TEST0 //TEST1 TEST2 TEST3 TEST4
+#define TEST5 //TEST1 TEST2 TEST3 TEST4
 
 
 
@@ -164,7 +164,7 @@ int main() {
     assert(wordlist->findWord("Waldo") == 2);
     
     WordList *wordlist2 = new WordList(0);
-    assert(wordlist->findWord("testing") == -1);      // m_list is nullptr
+    assert(wordlist2->findWord("testing") == -1);      // m_list is nullptr
     
     return 0;
 }
