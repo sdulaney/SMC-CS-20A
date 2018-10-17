@@ -176,7 +176,7 @@ int	WordList::addWord(const char word[]) {
 }
 
 
-/* Funtion: removeWord
+/* Function: removeWord
 *
 *
 *	If m_list is nullptr, returns -1.  Otherwise, searches for every
@@ -204,7 +204,7 @@ int	WordList::removeWord(const char word[]) {
 }
 
 
-/* Funtion: appendList
+/* Function: appendList
 *
 *
 *	Appends the contents of src_list to the WordList.  If WordList does 
@@ -251,7 +251,7 @@ int	WordList::appendLists(const WordList* src_list) {
 }
 
 
-/* Funtion: findWord
+/* Function: findWord
 *
 *	Finds the first occurrence of the word in the WordList
 *	returns the position of that word in the list.  Otherwise, 
