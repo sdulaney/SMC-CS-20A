@@ -104,10 +104,10 @@ int	WordList::printList() const {
 *	return nullptr if the index is out of bounds.
 */
 char* WordList::getAt(const int index) const {
-
-	// TODO: 
-	return nullptr;
-
+    if ((index < 0) || (index >= m_count)) {
+        return nullptr;
+    }
+    return m_list[index];
 }
 
 
@@ -175,7 +175,7 @@ int	WordList::addWord(const char word[]) {
 *	the number of words removed.
 */
 int	WordList::removeWord(const char word[]) {
-
+    
 	// TODO:
 	return -1;
 }
