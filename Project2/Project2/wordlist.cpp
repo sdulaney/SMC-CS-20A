@@ -207,10 +207,15 @@ int	WordList::appendLists(const WordList* src_list) {
 *	return -1. 
 */
 int WordList::findWord(const char word[]) const {
-
-	// TODO:
-	return -1;
-
+    if (m_list == nullptr) {
+        return -1;
+    }
+    for (int i = 0; i < m_count; i++) {
+        if (strcmp(m_list[i], word) == 0) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 
