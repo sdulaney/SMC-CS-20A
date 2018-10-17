@@ -301,13 +301,34 @@ int	WordList::sortList() {
 }
 
 
-/* Funtion: Assignment Operator
+/* Function: Assignment Operator
 *
 *	Overload the assignment operator for WordList.  Makes a deep 
 *	copy from src_list to this WordList.  
 */
 WordList& WordList::operator=(const WordList &src_list) {
-
-	// TODO:
-	return *this;
+    if (this == &src_list) {
+        return *this;
+    }
+    for (int i = 0; i < m_max_words; i++) {
+        delete [] m_list[i];
+    }
+    delete [] m_list;
+    m_count = src_list.m_count;
+    m_max_words = src_list.m_max_words;
+    
+    if (src_list.m_list == nullptr) {
+        m_list = nullptr;
+    }
+    else {
+        m_list = new char*[m_max_words];
+        for (int i = 0; i < m_max_words; i++) {
+            m_list[i] = new char[20];
+        }
+        for (int i = 0; i < m_count; i++) {
+            // Assumes words will be no more than 19 characters in length (+1 for the null character)
+            strcpy(m_list[i], src_list.m_list[i]);
+        }
+    }
+    return *this;
 }
