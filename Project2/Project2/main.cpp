@@ -169,6 +169,36 @@ int main() {
     return 0;
 }
 
+#elif defined TEST6
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"wordlist.h"
+
+// Test appendLists. Both Constructor and addWord must be implmented prior to running
+// this code, otherwise it will crash.
+int main() {
+    WordList *wordlist = new WordList(4);
+    wordlist->addWord("Where");
+    wordlist->addWord("Is");
+    wordlist->addWord("Waldo");
+    
+    WordList *wordlist2 = new WordList(0);
+    assert(wordlist->appendLists(wordlist2) == -1);     // wordlist2 is empty
+    WordList *wordlist3 = nullptr;
+    assert(wordlist->appendLists(wordlist3) == -1);     // wordlist3 is nullptr
+    WordList *wordlist4 = new WordList(5);
+    wordlist4->addWord("Apple");
+    wordlist4->addWord("Banana");
+    wordlist4->addWord("Carrot");
+    wordlist4->addWord("Donut");
+    wordlist4->addWord("Egg");
+    assert(wordlist->appendLists(wordlist4) == 5);      // dynamically allocates enough space to append 5 words
+    assert(wordlist2->appendLists(wordlist4) == -2);    // dynamically allocates enough space to append 5 words, but m_list was nullptr for wordlist2
+    
+    return 0;
+}
+
+
 #else
 
 
