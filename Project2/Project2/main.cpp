@@ -198,6 +198,28 @@ int main() {
     return 0;
 }
 
+#elif defined TEST7
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"wordlist.h"
+
+// Test getAt. Both Constructor and addWord must be implmented prior to running
+// this code, otherwise it will crash.
+int main() {
+    WordList *wordlist = new WordList(4);
+    wordlist->addWord("Where");
+    wordlist->addWord("Is");
+    wordlist->addWord("Waldo");
+    
+    assert(wordList->getAt(-1) == nullptr);             // index is out of bounds
+    assert(wordList->getAt(4) == nullptr);              // index is out of bounds
+    assert(strcmp(wordList->getAt(0), "Where") == 0);
+    assert(strcmp(wordList->getAt(1), "Is") == 0);
+    assert(strcmp(wordList->getAt(2), "Waldo") == 0);
+    
+    return 0;
+}
+
 
 #else
 
