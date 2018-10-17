@@ -163,6 +163,9 @@ int main() {
     assert(wordlist->findWord("Is") == 1);
     assert(wordlist->findWord("Waldo") == 2);
     
+    WordList *wordlist2 = new WordList(0);
+    assert(wordlist->findWord("testing") == -1);      // m_list is nullptr
+    
     return 0;
 }
 
