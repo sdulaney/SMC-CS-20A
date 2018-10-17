@@ -144,6 +144,28 @@ int main() {
 	
 	return 0;
 }
+
+#elif defined TEST5
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"wordlist.h"
+
+// Test findWord. Both Constructor and addWord must be implmented prior to running
+// this code, otherwise it will crash.
+int main() {
+    WordList *wordlist = new WordList(4);
+    wordlist->addWord("Where")
+    wordlist->addWord("Is")
+    wordlist->addWord("Waldo")
+    
+    assert(wordlist->findWord("waldo") == -1);
+    assert(wordlist->findWord("Where") == 0);
+    assert(wordlist->findWord("Is") == 1);
+    assert(wordlist->findWord("Waldo") == 2);
+    
+    return 0;
+}
+
 #else
 
 
