@@ -44,7 +44,7 @@ WordList::WordList(const int max_words) {
     else {
         m_max_words = max_words;
         m_list = new char*[m_max_words];
-        for (int i = 0; i < m_max_words; i++) {
+        for (unsigned int i = 0; i < m_max_words; i++) {
             m_list[i] = new char[20];
         }
     }
@@ -63,10 +63,10 @@ WordList::WordList(const WordList &other) {
     }
     else {
         m_list = new char*[m_max_words];
-        for (int i = 0; i < m_max_words; i++) {
+        for (unsigned int i = 0; i < m_max_words; i++) {
             m_list[i] = new char[20];
         }
-        for (int i = 0; i < m_count; i++) {
+        for (unsigned int i = 0; i < m_count; i++) {
             // Assumes words will be no more than 19 characters in length (+1 for the null character)
             strcpy(m_list[i], other.m_list[i]);
         }
@@ -79,7 +79,7 @@ WordList::WordList(const WordList &other) {
 *	Cleans up WordList's dynamically allocated memory.
 */
 WordList::~WordList() {
-    for (int i = 0; i < m_max_words; i++) {
+    for (unsigned int i = 0; i < m_max_words; i++) {
         delete [] m_list[i];
     }
     delete [] m_list;
@@ -96,7 +96,7 @@ int	WordList::printList() const {
         return -1;
     }
     int count = 0;
-    for (int i = 0; i < m_count; i++) {
+    for (unsigned int i = 0; i < m_count; i++) {
         cout << m_list[i];
         count++;
         if (i == (m_count - 1)) {
@@ -158,11 +158,11 @@ int	WordList::addWord(const char word[]) {
         for (int i = 0; i < temp_max_words; i++) {
             temp[i] = new char[20];
         }
-        for (int i = 0; i < m_count; i++) {
+        for (unsigned int i = 0; i < m_count; i++) {
             // Assumes words will be no more than 19 characters in length (+1 for the null character)
             strcpy(temp[i], m_list[i]);
         }
-        for (int i = 0; i < m_max_words; i++) {
+        for (unsigned int i = 0; i < m_max_words; i++) {
             delete [] m_list[i];
         }
         delete [] m_list;
@@ -193,7 +193,7 @@ int	WordList::removeWord(const char word[]) {
     }
     while (findWord(word) != -1) {
         int index = findWord(word);
-        for (int i = index; i < m_count - 1; i++) {
+        for (unsigned int i = index; i < m_count - 1; i++) {
             // Assumes words will be no more than 19 characters in length (+1 for the null character)
             strcpy(m_list[i], m_list[i + 1]);
         }
@@ -231,11 +231,11 @@ int	WordList::appendLists(const WordList* src_list) {
         for (int i = 0; i < temp_max_words; i++) {
             temp[i] = new char[20];
         }
-        for (int i = 0; i < m_count; i++) {
+        for (unsigned int i = 0; i < m_count; i++) {
             // Assumes words will be no more than 19 characters in length (+1 for the null character)
             strcpy(temp[i], m_list[i]);
         }
-        for (int i = 0; i < m_max_words; i++) {
+        for (unsigned int i = 0; i < m_max_words; i++) {
             delete [] m_list[i];
         }
         delete [] m_list;
@@ -262,7 +262,7 @@ int WordList::findWord(const char word[]) const {
     if (m_list == nullptr) {
         return -1;
     }
-    for (int i = 0; i < m_count; i++) {
+    for (unsigned int i = 0; i < m_count; i++) {
         if (strcmp(m_list[i], word) == 0) {
             return i;
         }
@@ -310,7 +310,7 @@ WordList& WordList::operator=(const WordList &src_list) {
     if (this == &src_list) {
         return *this;
     }
-    for (int i = 0; i < m_max_words; i++) {
+    for (unsigned int i = 0; i < m_max_words; i++) {
         delete [] m_list[i];
     }
     delete [] m_list;
@@ -322,10 +322,10 @@ WordList& WordList::operator=(const WordList &src_list) {
     }
     else {
         m_list = new char*[m_max_words];
-        for (int i = 0; i < m_max_words; i++) {
+        for (unsigned int i = 0; i < m_max_words; i++) {
             m_list[i] = new char[20];
         }
-        for (int i = 0; i < m_count; i++) {
+        for (unsigned int i = 0; i < m_count; i++) {
             // Assumes words will be no more than 19 characters in length (+1 for the null character)
             strcpy(m_list[i], src_list.m_list[i]);
         }
