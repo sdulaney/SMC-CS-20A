@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST3
+#define TEST4
 
 #ifdef TEST0
 
@@ -103,6 +103,44 @@ int main() {
     l2.addToFront("Shell");
     l2.addToFront("Cash");
     l2.printItems();         // Front Cash Shell Ruby Rear
+    
+    return 0;
+}
+
+#elif defined TEST4
+
+#define MAKE_MEMBERS_PUBLIC
+#include"list.h"
+
+// Test addToRear
+int main() {
+    
+    List<int> l; //List of integers
+    
+    // Case 1: Linked list is empty
+    l.addToRear(10);
+    assert(l.head != nullptr);
+    assert(l.tail != nullptr);
+    assert(l.head == l.tail);
+    assert(l.size == 1);
+    assert(l.head->item == 10);
+    assert(l.head->next == nullptr);
+    
+    // Case 2: Linked list is not empty
+    l.addToRear(31);
+    assert(l.head != nullptr);
+    assert(l.tail != nullptr);
+    assert(l.head != l.tail);
+    assert(l.size == 2);
+    assert(l.head->item == 10);
+    assert(l.head->next == l.tail);
+    assert(l.tail->item == 31);
+    assert(l.tail->next == nullptr);
+    l.addToRear(18);
+    assert(l.size == 3);
+    assert(l.head->item == 10);
+    assert(l.head->next->item == 31);
+    assert(l.tail->item == 18);
     
     return 0;
 }
