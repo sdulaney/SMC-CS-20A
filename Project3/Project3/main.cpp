@@ -1,6 +1,8 @@
 #include"Studentinfo.h"
 #include<iostream>
 #include<assert.h>
+using std::cout;
+using std::endl;
 
 // Choose which test to compile
 #define TEST2
@@ -12,8 +14,8 @@
 // Sample Usage
 int main() {
     
-    std::cout << StudentInfo::name() << std::endl;
-    std::cout << StudentInfo::id() << std::endl;
+    cout << StudentInfo::name() << endl;
+    cout << StudentInfo::id() << endl;
     
     List<int> l; //List of integers
     
