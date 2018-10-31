@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST2
+#define TEST3
 
 #ifdef TEST0
 
@@ -80,6 +80,29 @@ int main() {
     assert(l.head->item == 18);
     assert(l.head->next->item == 31);
     assert(l.tail->item == 10);
+    
+    return 0;
+}
+
+#elif defined TEST3
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"list.h"
+#include <string>
+using std::string;
+
+// Test printItems
+int main() {
+    // Case 1: Linked list is empty
+    List<int> l;
+    l.printItems();         // Front Rear
+    
+    // Case 2: Linked list is not empty
+    List<string> l2; //List of strings
+    l2.addToFront("Ruby");
+    l2.addToFront("Shell");
+    l2.addToFront("Cash");
+    l2.printItems();         // Front Cash Shell Ruby Rear
     
     return 0;
 }
