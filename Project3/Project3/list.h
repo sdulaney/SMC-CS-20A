@@ -102,9 +102,13 @@ List<Type>::~List() {
 //
 template<typename Type>
 void List<Type>::printItems() const {
-    
-    /* TODO */
-    
+    cout << "Front ";
+    Node* p = head;
+    while (p != nullptr) {
+        cout << p->item << " ";
+        p = p->next;
+    }
+    cout << "Rear\n";
 }
 
 // 4. List isEmpty
