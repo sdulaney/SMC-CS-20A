@@ -128,9 +128,16 @@ bool List<Type>::isEmpty() const {
 //
 template<typename Type>
 void List<Type>::addToFront(Type item) {
-    
-    /* TODO */
-    
+    Node* p = new Node;
+    p->item = item;
+    p->next = head;
+    head = p;
+    size++;
+    Node* temp = head;
+    while (temp->next != nullptr) {
+        temp = temp->next;
+    }
+    tail = temp;
 }
 
 // 6. List addToRear
