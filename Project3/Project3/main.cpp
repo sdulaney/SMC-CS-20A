@@ -44,6 +44,44 @@ int main() {
     return 0;
 }
 
+#elif defined TEST2
+
+#define MAKE_MEMBERS_PUBLIC
+#include"list.h"
+
+// Test addToFront
+int main() {
+    
+    List<int> l; //List of integers
+    
+    // Case 1: Linked list is empty
+    l.addToFront(10);
+    assert(l.head != nullptr);
+    assert(l.tail != nullptr);
+    assert(l.head == l.tail);
+    assert(l.size == 1);
+    assert(l.head->item == 10);
+    assert(l.head->next == nullptr);
+    
+    // Case 2: Linked list is not empty
+    l.addToFront(31);
+    assert(l.head != nullptr);
+    assert(l.tail != nullptr);
+    assert(l.head != l.tail);
+    assert(l.size == 2);
+    assert(l.head->item == 31);
+    assert(l.head->next == l.head->tail);
+    assert(l.tail->item == 10);
+    assert(l.tail->next == nullptr);
+    l.addToFront(18);
+    assert(l.size == 3);
+    assert(l.head->item == 18);
+    assert(l.head->next->item == 31);
+    assert(l.tail->item == 10);
+    
+    return 0;
+}
+
 #else
 
 #include"list.h"
