@@ -79,8 +79,9 @@ public:
 //        Set head and tail pointer to point to nothing, size is zero
 template<typename Type>
 List<Type>::List(){
-    
-    /* TODO */
+    head = nullptr;
+    tail = nullptr;
+    size = 0;
 }
 
 // 2. List destructor
