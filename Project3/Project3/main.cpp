@@ -3,7 +3,7 @@
 #include<assert.h>
 
 // Choose which test to compile
-#define TEST1
+#define TEST2
 
 #ifdef TEST0
 
@@ -70,7 +70,7 @@ int main() {
     assert(l.head != l.tail);
     assert(l.size == 2);
     assert(l.head->item == 31);
-    assert(l.head->next == l.head->tail);
+    assert(l.head->next == l.tail);
     assert(l.tail->item == 10);
     assert(l.tail->next == nullptr);
     l.addToFront(18);
