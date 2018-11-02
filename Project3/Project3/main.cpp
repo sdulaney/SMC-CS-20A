@@ -403,6 +403,7 @@ int main() {
     assert(l3.head->next->item == 2);
     assert(l3.head->next->next == l3.tail);
     assert(l3.tail->item == 20);
+    assert(l3.tail->next == nullptr);
     assert(l3.size == 3);
     
     GETMEMORYREPORT();
