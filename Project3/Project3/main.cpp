@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST14
+#define TEST15
 
 #ifdef TEST0
 
@@ -518,6 +518,28 @@ int main() {
     l.addItem(-1, 7);
     l.addItem(-1, 11);
     assert(l.getRear() == 7);
+    
+    return 0;
+}
+
+#elif defined TEST15
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"list.h"
+
+// Test getSize
+int main() {
+    
+    List<int> l; //List of integers
+    assert(l.getSize() == 0);
+    l.addItem(-1, 7);
+    assert(l.getSize() == 1);
+    l.addItem(-1, 11);
+    assert(l.getSize() == 2);
+    l.deleteRear();
+    assert(l.getSize() == 1);
+    l.deleteFront();
+    assert(l.getSize() == 0);
     
     return 0;
 }
