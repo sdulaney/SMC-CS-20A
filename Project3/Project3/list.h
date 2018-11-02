@@ -215,11 +215,7 @@ Type List<Type>::getFront() const {
     // we'll make due with assert, which is used for testing
     assert(head != nullptr);
     
-    /* TODO: Note that your code should come after the assert */
-    
-    Type dumbyVariableSoCodeCompiles_DontActuallyUseThis;
-    return dumbyVariableSoCodeCompiles_DontActuallyUseThis;
-    
+    return head->item;
 }
 
 // 9. List getRear
