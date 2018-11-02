@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST8
+#define TEST9
 
 #ifdef TEST0
 
@@ -301,6 +301,51 @@ int main() {
     // Case 3: list is empty
     List<int> l2; //List of integers
     assert(l2.findItem(27) == -1);
+    
+    return 0;
+}
+
+#elif defined TEST9
+
+#define MAKE_MEMBERS_PUBLIC
+#define DEBUGMEMORY
+#include"debugmem.h"
+#include"list.h"
+
+// Test deleteFront
+int main() {
+    
+    // Case 1: Linked list is empty
+    List<int> l; //List of integers
+    assert(l.deleteFront() == false);
+    assert(l.size == 0);
+    
+    // Case 2: Linked list has one item
+    List<int> l2; //List of integers
+    l2.addToRear(11);
+    
+    GETMEMORYREPORT();
+    cout << endl;
+    
+    assert(l2.deleteFront() == true);
+    
+    GETMEMORYREPORT();
+    cout << endl;
+    
+    // Case 2: Linked list has more than one item
+    List<int> l3; //List of integers
+    l3.addToRear(11);
+    l3.addToRear(2);
+    l3.addToRear(20);
+    l3.addToRear(18);
+    
+    GETMEMORYREPORT();
+    cout << endl;
+    
+    assert(l3.deleteFront() == true);
+    
+    GETMEMORYREPORT();
+    cout << endl;
     
     return 0;
 }
