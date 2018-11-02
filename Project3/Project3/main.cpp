@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST10
+#define TEST11
 
 #ifdef TEST0
 
@@ -403,6 +403,65 @@ int main() {
     assert(l3.head->next->item == 2);
     assert(l3.head->next->next == l3.tail);
     assert(l3.tail->item == 20);
+    assert(l3.tail->next == nullptr);
+    assert(l3.size == 3);
+    
+    GETMEMORYREPORT();
+    cout << endl;
+    
+    return 0;
+}
+
+#elif defined TEST11
+
+#define MAKE_MEMBERS_PUBLIC
+#define DEBUGMEMORY
+#include"debugmem.h"
+#include"list.h"
+
+// Test deleteItem
+int main() {
+    
+    // Case 1: Linked list is empty
+    List<int> l; //List of integers
+    assert(l.deleteItem(-1) == false);
+    assert(l.deleteItem(0) == false);
+    assert(l.size == 0);
+    
+    // Case 2: Linked list has one item
+    List<int> l2; //List of integers
+    l2.addToRear(11);
+    
+    GETMEMORYREPORT();
+    cout << endl;
+    
+    assert(l2.deleteItem(-1) == false);
+    assert(l2.deleteItem(1) == false);
+    assert(l2.deleteItem(0) == true);
+    assert(l2.head == nullptr);
+    assert(l2.tail == nullptr);
+    assert(l2.size == 0);
+    
+    GETMEMORYREPORT();
+    cout << endl;
+    
+    // Case 3: Linked list has two or more items
+    List<int> l3; //List of integers
+    l3.addToRear(11);
+    l3.addToRear(2);
+    l3.addToRear(20);
+    l3.addToRear(18);
+    
+    GETMEMORYREPORT();
+    cout << endl;
+    
+    assert(l3.deleteItem(-1) == false);
+    assert(l3.deleteItem(4) == false);
+    assert(l3.deleteItem(2) == true);
+    assert(l3.head->item == 11);
+    assert(l3.head->next->item == 2);
+    assert(l3.head->next->next == l3.tail);
+    assert(l3.tail->item == 18);
     assert(l3.tail->next == nullptr);
     assert(l3.size == 3);
     
