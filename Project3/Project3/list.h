@@ -356,10 +356,27 @@ bool List<Type>::deleteRear() {
 //
 template<typename Type>
 bool List<Type>::deleteItem(int index) {
-    
-    /* TODO: Note the return value here is so that the program compiles */
-    return false;
-    
+    if ((index < 0) || (index >= size)) {
+        return false;
+    }
+    else if (index == 0) {
+        deleteFront();
+    }
+    else if (index == (size - 1)) {
+        deleteRear();
+    }
+    else {
+        Node* temp = head;
+        // Traverse to the Node above the Node to delete
+        for (int i = 0; i < (index - 1); i++) {
+            temp = temp->next;
+        }
+        Node* n = temp->next->next;
+        delete temp->next;
+        temp->next = n;
+        size--;
+    }
+    return true;
 }
 
 #endif//LIST_H
