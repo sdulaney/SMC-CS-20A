@@ -254,10 +254,12 @@ Type List<Type>::getItem(int index) const {
     // make due with assert, which is used for testing
     assert(index >= 0 && index < size);
     
-    /* TODO: Note that your code should come after the assert */
-    
-    Type dumbyVariableSoCodeCompiles_DontActuallyUseThis;
-    return dumbyVariableSoCodeCompiles_DontActuallyUseThis;
+    Node* temp = head;
+    // Traverse to the Node at index index
+    for (int i = 0; i < index; i++) {
+        temp = temp->next;
+    }
+    return temp->item;
 }
 
 // 11. List getSize
