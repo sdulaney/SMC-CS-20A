@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST4
+#define TEST5
 
 #ifdef TEST0
 
@@ -141,6 +141,32 @@ int main() {
     assert(l.head->item == 10);
     assert(l.head->next->item == 31);
     assert(l.tail->item == 18);
+    
+    return 0;
+}
+
+#elif defined TEST5
+
+//#define MAKE_MEMBERS_PUBLIC
+#define DEBUGMEMORY
+#include"debugmem.h"
+#include"list.h"
+
+// Test destructor
+int main() {
+    
+    List<int>* l = new List<int>; //List of integers
+    l->addToRear(11);
+    l->addToRear(2);
+    l->addToRear(18);
+    
+    GETMEMORYREPORT();
+    cout << endl;
+    
+    delete l;
+    
+    GETMEMORYREPORT();
+    cout << endl;
     
     return 0;
 }
