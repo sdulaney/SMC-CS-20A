@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST5
+#define TEST6
 
 #ifdef TEST0
 
@@ -167,6 +167,92 @@ int main() {
     
     GETMEMORYREPORT();
     cout << endl;
+    
+    return 0;
+}
+
+#elif defined TEST6
+
+#define MAKE_MEMBERS_PUBLIC
+#include"list.h"
+
+// Test addItem
+int main() {
+    
+    // Case 1: index < 0
+    List<int> l; //List of integers
+    l.addToRear(11);
+    l.addToRear(2);
+    l.addToRear(20);
+    l.addToRear(18);
+    l.addItem(-1, 7);
+    assert(l.head->item == 7);
+    assert(l.head->next->item == 11);
+    assert(l.head->next->next->item == 2);
+    assert(l.head->next->next->next->item == 20);
+    assert(l.head->next->next->next->next == l.tail);
+    assert(l.tail->item == 18);
+    assert(l.size == 5);
+    
+    // Case 2: index == 0
+    List<int> l2; //List of integers
+    l2.addToRear(11);
+    l2.addToRear(2);
+    l2.addToRear(20);
+    l2.addToRear(18);
+    l2.addItem(0, 7);
+    assert(l2.head->item == 7);
+    assert(l2.head->next->item == 11);
+    assert(l2.head->next->next->item == 2);
+    assert(l2.head->next->next->next->item == 20);
+    assert(l2.head->next->next->next->next == l2.tail);
+    assert(l2.tail->item == 18);
+    assert(l2.size == 5);
+    
+    // Case 3: index == (size - 1)
+    List<int> l3; //List of integers
+    l3.addToRear(11);
+    l3.addToRear(2);
+    l3.addToRear(20);
+    l3.addToRear(18);
+    l3.addItem(3, 7);
+    assert(l3.head->item == 11);
+    assert(l3.head->next->item == 2);
+    assert(l3.head->next->next->item == 20);
+    assert(l3.head->next->next->next->item == 18);
+    assert(l3.head->next->next->next->next == l3.tail);
+    assert(l3.tail->item == 7);
+    assert(l3.size == 5);
+    
+    // Case 4: index > (size - 1)
+    List<int> l4; //List of integers
+    l4.addToRear(11);
+    l4.addToRear(2);
+    l4.addToRear(20);
+    l4.addToRear(18);
+    l4.addItem(4, 7);
+    assert(l4.head->item == 11);
+    assert(l4.head->next->item == 2);
+    assert(l4.head->next->next->item == 20);
+    assert(l4.head->next->next->next->item == 18);
+    assert(l4.head->next->next->next->next == l4.tail);
+    assert(l4.tail->item == 7);
+    assert(l4.size == 5);
+    
+    // Case 5: all other cases
+    List<int> l5; //List of integers
+    l5.addToRear(11);
+    l5.addToRear(2);
+    l5.addToRear(20);
+    l5.addToRear(18);
+    l5.addItem(2, 7);
+    assert(l5.head->item == 11);
+    assert(l5.head->next->item == 2);
+    assert(l5.head->next->next->item == 7);
+    assert(l5.head->next->next->next->item == 20);
+    assert(l5.head->next->next->next->next == l5.tail);
+    assert(l5.tail->item == 18);
+    assert(l5.size == 5);
     
     return 0;
 }
