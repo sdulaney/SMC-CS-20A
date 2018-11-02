@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST13
+#define TEST14
 
 #ifdef TEST0
 
@@ -502,6 +502,22 @@ int main() {
     l.addItem(-1, 7);
     l.addItem(-1, 11);
     assert(l.getFront() == 11);
+    
+    return 0;
+}
+
+#elif defined TEST14
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"list.h"
+
+// Test getRear
+int main() {
+    
+    List<int> l; //List of integers
+    l.addItem(-1, 7);
+    l.addItem(-1, 11);
+    assert(l.getRear() == 7);
     
     return 0;
 }
