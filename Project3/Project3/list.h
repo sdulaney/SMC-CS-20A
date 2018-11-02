@@ -88,9 +88,12 @@ List<Type>::List(){
 //        Traverses the nodes and deletes them without causing memory leak
 template<typename Type>
 List<Type>::~List() {
-    
-    /* TODO */
-    
+    Node* p = head;
+    while (p != nullptr) {
+        Node* n = p->next;
+        delete p;
+        p = n;
+    }
 }
 
 // 3. List printItems
