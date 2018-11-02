@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST6
+#define TEST7
 
 #ifdef TEST0
 
@@ -253,6 +253,27 @@ int main() {
     assert(l5.head->next->next->next->next == l5.tail);
     assert(l5.tail->item == 18);
     assert(l5.size == 5);
+    
+    return 0;
+}
+
+#elif defined TEST7
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"list.h"
+
+// Test getItem
+int main() {
+    
+    List<int> l; //List of integers
+    l.addToRear(11);
+    l.addToRear(2);
+    l.addToRear(20);
+    l.addToRear(18);
+    assert(l.getItem(0) == 11);
+    assert(l.getItem(1) == 2);
+    assert(l.getItem(2) == 20);
+    assert(l.getItem(3) == 18);
     
     return 0;
 }
