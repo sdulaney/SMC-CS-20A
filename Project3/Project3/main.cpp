@@ -328,6 +328,8 @@ int main() {
     cout << endl;
     
     assert(l2.deleteFront() == true);
+    assert(l2.head == nullptr);
+    assert(l2.size == 0);
     
     GETMEMORYREPORT();
     cout << endl;
@@ -343,6 +345,11 @@ int main() {
     cout << endl;
     
     assert(l3.deleteFront() == true);
+    assert(l3.head->item == 2);
+    assert(l3.head->next->item == 20);
+    assert(l3.head->next->next == l3.tail);
+    assert(l3.tail->item == 18);
+    assert(l3.size == 3);
     
     GETMEMORYREPORT();
     cout << endl;
