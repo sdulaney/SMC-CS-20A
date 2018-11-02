@@ -279,9 +279,16 @@ int List<Type>::getSize() const {
 //        object Type.
 template<typename Type>
 int List<Type>::findItem(Type item) const {
-    
-    /* TODO: Note the return value here is so that the program compiles */
-    return 9000;
+    int index = 0;
+    Node* temp = head;
+    while (temp != nullptr) {
+        if (temp->item == item) {
+            return index;
+        }
+        temp = temp->next;
+        index++;
+    }
+    return -1;
 }
 
 // 13. List deleteFront
