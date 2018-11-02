@@ -230,10 +230,7 @@ Type List<Type>::getRear() const {
     // make due with assert, which is used for testing
     assert(tail != nullptr);
     
-    /* TODO: Note that your code should come after the assert */
-    
-    Type dumbyVariableSoCodeCompiles_DontActuallyUseThis;
-    return dumbyVariableSoCodeCompiles_DontActuallyUseThis;
+    return tail->item;
 }
 
 // 10. List getItem
