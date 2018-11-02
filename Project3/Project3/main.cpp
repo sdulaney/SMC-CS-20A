@@ -298,6 +298,10 @@ int main() {
     // Case 2: item is not in list
     assert(l.findItem(27) == -1);
     
+    // Case 3: list is empty
+    List<int> l2; //List of integers
+    assert(l2.findItem(27) == -1);
+    
     return 0;
 }
 
