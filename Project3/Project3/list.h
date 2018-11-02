@@ -119,9 +119,7 @@ void List<Type>::printItems() const {
 //        otherwise returns false.
 template<typename Type>
 bool List<Type>::isEmpty() const {
-    
-    /* TODO: Note the return value here is so that the program compiles */
-    return false;
+    return (size == 0);
     
 }
 
