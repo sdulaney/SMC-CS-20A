@@ -153,9 +153,21 @@ void List<Type>::addToFront(Type item) {
 //
 template<typename Type>
 void List<Type>::addToRear(Type item) {
-    
-    /* TODO */
-    
+    if (head == nullptr) {
+        addToFront(item);
+    }
+    else {
+        Node* temp = head;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        Node* p = new Node;
+        p->item = item;
+        temp->next = p;
+        p->next = nullptr;
+        tail = p;
+        size++;
+    }
 }
 
 // 7. List addItem
