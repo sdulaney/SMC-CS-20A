@@ -325,9 +325,27 @@ bool List<Type>::deleteFront() {
 //
 template<typename Type>
 bool List<Type>::deleteRear() {
-    
-    /* TODO: Note the return value here is so that the program compiles */
-    return false;
+    if (head == nullptr) {              // Linked list is empty
+        return false;
+    }
+    else {
+        delete tail;
+        size--;
+        if (size == 0) {                // Linked list had one item
+            head = nullptr;
+            tail = nullptr;
+        }
+        else {                          // Linked list had two or more items
+            Node* temp = head;
+            // Traverse to the node above where tail was
+            while (temp->next != tail) {
+                temp = temp->next;
+            }
+            temp->next = nullptr;
+            tail = temp;
+        }
+        return true;
+    }
 }
 
 // 15. List deleteItem
