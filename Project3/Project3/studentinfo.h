@@ -4,8 +4,8 @@
 
 //Replace "Your Name" and "Your ID#";
 namespace StudentInfo {
-    std::string name() { return "Your Name"; }
-    std::string id() { return "Your ID#"; }
+    std::string name() { return "Stewart Dulaney"; }
+    std::string id() { return "1545566"; }
 };
 
 #endif
