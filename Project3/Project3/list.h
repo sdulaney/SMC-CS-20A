@@ -186,9 +186,24 @@ void List<Type>::addToRear(Type item) {
 //
 template<typename Type>
 void List<Type>::addItem(int index, Type item) {
-    
-    /* TODO */
-    
+    if (index <= 0) {
+        addToFront(item);
+    }
+    else if (index >= (size - 1)) {
+        addToRear(item);
+    }
+    else {
+        Node* temp = head;
+        // Traverse to the Node above where we want to insert a new Node
+        for (int i = 0; i < (index - 1); i++) {
+            temp = temp->next;
+        }
+        Node* p = new Node;
+        p->item = item;
+        p->next = temp->next;
+        temp->next = p;
+        size++;
+    }
 }
 
 // 8. List getFront
