@@ -301,9 +301,19 @@ int List<Type>::findItem(Type item) const {
 //
 template<typename Type>
 bool List<Type>::deleteFront() {
-    
-    /* TODO: Note the return value here is so that the program compiles */
-    return false;
+    Node* temp = head;
+    if (temp == nullptr) {
+        return false;
+    }
+    else {
+        head = head->next;
+        delete temp;
+        size--;
+        if (size == 0) {
+            tail = nullptr;
+        }
+        return true;
+    }
 }
 // 14. List deleteRear
 //        Removes the last item in the list returns true
