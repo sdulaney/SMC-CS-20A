@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST7
+#define TEST8
 
 #ifdef TEST0
 
@@ -274,6 +274,29 @@ int main() {
     assert(l.getItem(1) == 2);
     assert(l.getItem(2) == 20);
     assert(l.getItem(3) == 18);
+    
+    return 0;
+}
+
+#elif defined TEST8
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"list.h"
+
+// Test findItem
+int main() {
+    
+    List<int> l; //List of integers
+    l.addToRear(11);
+    l.addToRear(2);
+    l.addToRear(20);
+    l.addToRear(18);
+    
+    // Case 1: item is in list
+    assert(l.findItem(20) == 2);
+    
+    // Case 2: item is not in list
+    assert(l.findItem(27) == -1);
     
     return 0;
 }
