@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST11
+#define TEST12
 
 #ifdef TEST0
 
@@ -467,6 +467,25 @@ int main() {
     
     GETMEMORYREPORT();
     cout << endl;
+    
+    return 0;
+}
+
+#elif defined TEST12
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"list.h"
+
+// Test isEmpty
+int main() {
+    
+    // Case 1: Linked list is empty
+    List<int> l; //List of integers
+    assert(l.isEmpty() == true);
+    
+    // Case 2: Linked list is not empty
+    l.addItem(-2, 7);
+    assert(l.isEmpty() == false);
     
     return 0;
 }
