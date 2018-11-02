@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // Choose which test to compile
-#define TEST12
+#define TEST13
 
 #ifdef TEST0
 
@@ -486,6 +486,22 @@ int main() {
     // Case 2: Linked list is not empty
     l.addItem(-2, 7);
     assert(l.isEmpty() == false);
+    
+    return 0;
+}
+
+#elif defined TEST13
+
+//#define MAKE_MEMBERS_PUBLIC
+#include"list.h"
+
+// Test getFront
+int main() {
+    
+    List<int> l; //List of integers
+    l.addItem(-1, 7);
+    l.addItem(-1, 11);
+    assert(l.getFront() == 11);
     
     return 0;
 }
