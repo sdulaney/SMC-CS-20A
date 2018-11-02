@@ -329,6 +329,7 @@ int main() {
     
     assert(l2.deleteFront() == true);
     assert(l2.head == nullptr);
+    assert(l2.tail == nullptr);
     assert(l2.size == 0);
     
     GETMEMORYREPORT();
