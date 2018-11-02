@@ -257,10 +257,7 @@ Type List<Type>::getItem(int index) const {
 //        return the size of the list
 template<typename Type>
 int List<Type>::getSize() const {
-    
-    /* TODO: Note the return value here is so that the program compiles */
-    return 9000;
-    
+    return size;
 }
 
 // 12. List findItem
