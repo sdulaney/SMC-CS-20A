@@ -50,6 +50,8 @@
 		8D2BBE63219401FF00808DA1 /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
 		8D2BBE642194021100808DA1 /* utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
 		8D2BBE662194022400808DA1 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		8DD6ED9521954819006D755C /* list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
+		8DD6ED9621954827006D755C /* studentinfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = studentinfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				8D2BBE472193FF1D00808DA1 /* main.cpp */,
+				8DD6ED9521954819006D755C /* list.h */,
+				8DD6ED9621954827006D755C /* studentinfo.h */,
 				8D2BBE4E219400C200808DA1 /* actor.cpp */,
 				8D2BBE50219400DA00808DA1 /* actor.h */,
 				8D2BBE51219400EE00808DA1 /* aquarium.cpp */,

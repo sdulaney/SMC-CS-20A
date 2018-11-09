@@ -3,6 +3,8 @@
 
 #include<iostream>
 #include<assert.h>
+using std::cout;
+using std::endl;
 // Linked List object that maintains both head and tail pointers
 // and the size of the list.  Note that you have to keep the head,
 // tail and size consistent with the intended state of the List
