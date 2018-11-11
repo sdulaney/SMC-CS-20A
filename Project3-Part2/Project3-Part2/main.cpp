@@ -4,7 +4,7 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST12
+#define TEST13
 
 #ifdef TEST1
 //        What single specific particular one-thing is being tested?:
@@ -304,6 +304,23 @@ int main() {
     assert(stack.m_list.head == nullptr);
     assert(stack.m_list.tail == nullptr);
     assert(stack.m_list.size == 0);
+    
+    return 0;
+}
+
+#elif defined(TEST13) // Test Stack::printStack()
+//        What single specific particular one-thing is being tested?:
+//        What is expected?:
+//        What happens?:
+//#define MAKE_MEMBERS_PUBLIC
+#include"stack.h"
+int main() {
+    
+    Stack<std::string> stack;
+    stack.push("Feynman");
+    stack.push("Turing");
+    stack.push("Einstein");
+    stack.printStack();             // expect Front Einstein Turing Feynman Rear
     
     return 0;
 }
