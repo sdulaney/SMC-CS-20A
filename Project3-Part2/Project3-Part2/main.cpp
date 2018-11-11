@@ -4,7 +4,7 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST8
+#define TEST9
 
 #ifdef TEST1
 //        What single specific particular one-thing is being tested?:
@@ -214,6 +214,30 @@ int main() {
     queue.push("Turing");
     queue.push("Einstein");
     queue.printQueue();         // expect Front Feynman Turing Einstein Rear
+    
+    return 0;
+}
+
+#elif defined(TEST9) // Test Queue::peek()
+//        What single specific particular one-thing is being tested?:
+//        What is expected?:
+//        What happens?:
+#define MAKE_MEMBERS_PUBLIC
+#include"queue.h"
+int main() {
+    
+    Queue<std::string> queue;
+    queue.push("Feynman");
+    queue.push("Turing");
+    queue.push("Einstein");
+    assert(queue.peek() == "Feynman");
+    assert(queue.m_list.size == 3);
+    queue.pop();
+    assert(queue.peek() == "Turing");
+    queue.pop();
+    assert(queue.peek() == "Einstein");
+    // Note: As in List<Type>::getFront(), do not have to worry about case when
+    // linked list is empty
     
     return 0;
 }
