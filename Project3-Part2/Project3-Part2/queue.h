@@ -69,9 +69,7 @@ bool Queue<Type>::isEmpty() const {
 //
 template<typename Type>
 Type Queue<Type>::peek() const {
-    /* TODO */
-    Type dumbyVariableSoCodeCompiles_DontActuallyUseThis;
-    return dumbyVariableSoCodeCompiles_DontActuallyUseThis;
+    return m_list.getFront();
 }
 
 // 6. printQueue()
