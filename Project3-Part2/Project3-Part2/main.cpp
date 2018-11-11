@@ -1,9 +1,10 @@
 #include<iostream>
 #include<string>
+#include <assert.h>
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST3
+#define TEST6
 
 #ifdef TEST1
 //        What single specific particular one-thing is being tested?:
@@ -96,6 +97,7 @@ int main() {
     
     return 0;
 }
+
 #elif defined(TEST4) //Test a custom maze without backtracking
 //        What single specific particular one-thing is being tested?:
 //        What is expected?:
@@ -121,6 +123,7 @@ int main() {
     
     return 0;
 }
+
 #elif defined(TEST5) //Test lecture slide maze with backtracking
 //        What single specific particular one-thing is being tested?:
 //        What is expected?:
@@ -147,6 +150,28 @@ int main() {
     
     return 0;
 }
+
+#elif defined(TEST6) // Test Queue::push(Type item)
+//        What single specific particular one-thing is being tested?:
+//        What is expected?:
+//        What happens?:
+#define MAKE_MEMBERS_PUBLIC
+#include"queue.h"
+int main() {
+    
+    Queue<std::string> queue;
+    queue.push("Feynman");
+    queue.push("Turing");
+    queue.push("Einstein");
+    assert(queue.m_list.head->item == "Feynman");
+    assert(queue.m_list.head->next->item == "Turing");
+    assert(queue.m_list.head->next->next->item == "Einstein");
+    assert(queue.m_list.tail->item == "Einstein");
+    assert(queue.m_list.size == 3);
+    
+    return 0;
+}
+
 #else
 int main() {
     cout << "Hello World!" << endl;
