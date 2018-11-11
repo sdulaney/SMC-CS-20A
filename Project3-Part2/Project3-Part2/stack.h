@@ -60,8 +60,7 @@ void Stack<Type>::pop() {
 //
 template<typename Type>
 bool Stack<Type>::isEmpty() const {
-    /* TODO */
-    return false;
+    return m_list.isEmpty();
 }
 
 // 5. peek():
