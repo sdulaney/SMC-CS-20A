@@ -74,14 +74,13 @@ Type Queue<Type>::peek() const {
     return dumbyVariableSoCodeCompiles_DontActuallyUseThis;
 }
 
-// 6. printStack()
+// 6. printQueue()
 //        Print to console the elements of the queue.
 //        Used for debugging.
 //
 template<typename Type>
 void Queue<Type>::printQueue() const {
-    /* TODO */
-    
+    m_list.printItems();
 }
 
 #endif
