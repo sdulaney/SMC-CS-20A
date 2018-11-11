@@ -59,8 +59,7 @@ void Queue<Type>::pop() {
 //
 template<typename Type>
 bool Queue<Type>::isEmpty() const {
-    /* TODO */
-    return false;
+    return m_list.isEmpty();
 }
 
 // 5. peek():
