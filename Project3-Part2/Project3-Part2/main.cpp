@@ -4,7 +4,7 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST10
+#define TEST11
 
 #ifdef TEST1
 //        What single specific particular one-thing is being tested?:
@@ -254,6 +254,27 @@ int main() {
     assert(queue.isEmpty() == true);
     queue.push("Feynman");
     assert(queue.isEmpty() == false);
+    
+    return 0;
+}
+
+#elif defined(TEST11) // Test Stack::push(Type item)
+//        What single specific particular one-thing is being tested?:
+//        What is expected?:
+//        What happens?:
+#define MAKE_MEMBERS_PUBLIC
+#include"stack.h"
+int main() {
+    
+    Stack<std::string> stack;
+    stack.push("Feynman");
+    stack.push("Turing");
+    stack.push("Einstein");
+    assert(stack.m_list.head->item == "Einstein");
+    assert(stack.m_list.head->next->item == "Turing");
+    assert(stack.m_list.head->next->next->item == "Feynman");
+    assert(stack.m_list.tail->item == "Feynman");
+    assert(stack.m_list.size == 3);
     
     return 0;
 }
