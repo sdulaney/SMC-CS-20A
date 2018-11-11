@@ -4,7 +4,7 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST13
+#define TEST14
 
 #ifdef TEST1
 //        What single specific particular one-thing is being tested?:
@@ -321,6 +321,30 @@ int main() {
     stack.push("Turing");
     stack.push("Einstein");
     stack.printStack();             // expect Front Einstein Turing Feynman Rear
+    
+    return 0;
+}
+
+#elif defined(TEST14) // Test Stack::peek()
+//        What single specific particular one-thing is being tested?:
+//        What is expected?:
+//        What happens?:
+#define MAKE_MEMBERS_PUBLIC
+#include"stack.h"
+int main() {
+    
+    Stack<std::string> stack;
+    stack.push("Feynman");
+    stack.push("Turing");
+    stack.push("Einstein");
+    assert(stack.peek() == "Einstein");
+    assert(stack.m_list.size == 3);
+    stack.pop();
+    assert(stack.peek() == "Turing");
+    stack.pop();
+    assert(stack.peek() == "Feynman");
+    // Note: As in List<Type>::getFront(), do not have to worry about case when
+    // linked list is empty
     
     return 0;
 }
