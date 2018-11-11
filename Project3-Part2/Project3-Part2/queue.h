@@ -42,8 +42,7 @@ Queue<Type>::Queue() :m_list() {}
 //
 template<typename Type>
 void Queue<Type>::push(Type item) {
-    /* TODO */
-    
+    m_list.addToRear(item);
 }
 
 // 3. pop():
