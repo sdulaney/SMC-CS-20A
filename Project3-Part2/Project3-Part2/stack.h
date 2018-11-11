@@ -51,8 +51,7 @@ void Stack<Type>::push(Type item) {
 //
 template<typename Type>
 void Stack<Type>::pop() {
-    /* TODO */
-    
+    m_list.deleteFront();
 }
 
 // 4. isEmpty():
