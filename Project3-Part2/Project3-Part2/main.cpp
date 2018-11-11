@@ -4,7 +4,7 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST11
+#define TEST12
 
 #ifdef TEST1
 //        What single specific particular one-thing is being tested?:
@@ -275,6 +275,35 @@ int main() {
     assert(stack.m_list.head->next->next->item == "Feynman");
     assert(stack.m_list.tail->item == "Feynman");
     assert(stack.m_list.size == 3);
+    
+    return 0;
+}
+
+#elif defined(TEST12) // Test Stack::pop()
+//        What single specific particular one-thing is being tested?:
+//        What is expected?:
+//        What happens?:
+#define MAKE_MEMBERS_PUBLIC
+#include"stack.h"
+int main() {
+    
+    Stack<std::string> stack;
+    stack.push("Feynman");
+    stack.push("Turing");
+    stack.push("Einstein");
+    stack.pop();
+    assert(stack.m_list.head->item == "Turing");
+    assert(stack.m_list.head->next->item == "Feynman");
+    assert(stack.m_list.tail->item == "Feynman");
+    assert(stack.m_list.size == 2);
+    stack.pop();
+    assert(stack.m_list.head->item == "Feynman");
+    assert(stack.m_list.tail->item == "Feynman");
+    assert(stack.m_list.size == 1);
+    stack.pop();
+    assert(stack.m_list.head == nullptr);
+    assert(stack.m_list.tail == nullptr);
+    assert(stack.m_list.size == 0);
     
     return 0;
 }
