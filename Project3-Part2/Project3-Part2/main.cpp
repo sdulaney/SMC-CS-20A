@@ -4,7 +4,7 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST9
+#define TEST10
 
 #ifdef TEST1
 //        What single specific particular one-thing is being tested?:
@@ -238,6 +238,22 @@ int main() {
     assert(queue.peek() == "Einstein");
     // Note: As in List<Type>::getFront(), do not have to worry about case when
     // linked list is empty
+    
+    return 0;
+}
+
+#elif defined(TEST10) // Test Queue::isEmpty()
+//        What single specific particular one-thing is being tested?:
+//        What is expected?:
+//        What happens?:
+//#define MAKE_MEMBERS_PUBLIC
+#include"queue.h"
+int main() {
+    
+    Queue<std::string> queue;
+    assert(queue.isEmpty() == true);
+    queue.push("Feynman");
+    assert(queue.isEmpty() == false);
     
     return 0;
 }
