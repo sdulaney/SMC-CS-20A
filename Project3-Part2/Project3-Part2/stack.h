@@ -43,8 +43,7 @@ Stack<Type>::Stack():m_list() {}
 //
 template<typename Type>
 void Stack<Type>::push(Type item) {
-    /* TODO */
-    
+    m_list.addToFront(item);
 }
 
 // 3. pop():
