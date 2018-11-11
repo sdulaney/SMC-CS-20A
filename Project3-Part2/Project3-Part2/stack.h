@@ -81,7 +81,6 @@ Type Stack<Type>::peek() const {
 //
 template<typename Type>
 void Stack<Type>::printStack() const {
-    /* TODO */
-    
+    m_list.printItems();
 }
 #endif//STACK_H
