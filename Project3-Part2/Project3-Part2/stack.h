@@ -70,9 +70,7 @@ bool Stack<Type>::isEmpty() const {
 //
 template<typename Type>
 Type Stack<Type>::peek() const {
-    /* TODO */
-    Type dumbyVariableSoCodeCompiles_DontActuallyUseThis;
-    return dumbyVariableSoCodeCompiles_DontActuallyUseThis;
+    return m_list.getFront();
 }
 
 // 6. printStack()
