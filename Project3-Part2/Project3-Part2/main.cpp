@@ -6,7 +6,7 @@ using namespace std;
 #define TEST3
 
 #ifdef TEST1
-//        What single specific paricular one-thing is being tested?:
+//        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
 #include"list.h"
@@ -28,7 +28,7 @@ int main() {
 }
 
 #elif defined(TEST2)
-//        What single specific paricular one-thing is being tested?:
+//        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
 #include"stack.h"
@@ -69,7 +69,7 @@ int main() {
 }
 
 #elif defined(TEST3) //Test the maze in lecture slides without backtracking
-//        What single specific paricular one-thing is being tested?:
+//        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
 #include"game.h"
@@ -97,7 +97,7 @@ int main() {
     return 0;
 }
 #elif defined(TEST4) //Test a custom maze without backtracking
-//        What single specific paricular one-thing is being tested?:
+//        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
 #include"game.h"
@@ -122,7 +122,7 @@ int main() {
     return 0;
 }
 #elif defined(TEST5) //Test lecture slide maze with backtracking
-//        What single specific paricular one-thing is being tested?:
+//        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
 #include"game.h"
