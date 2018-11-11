@@ -50,8 +50,7 @@ void Queue<Type>::push(Type item) {
 //
 template<typename Type>
 void Queue<Type>::pop() {
-    /* TODO */
-    
+    m_list.deleteFront();
 }
 
 // 4. isEmpty():
