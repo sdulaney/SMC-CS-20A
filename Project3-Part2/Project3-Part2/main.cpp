@@ -4,7 +4,7 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST7
+#define TEST8
 
 #ifdef TEST1
 //        What single specific particular one-thing is being tested?:
@@ -197,6 +197,23 @@ int main() {
     assert(queue.m_list.head == nullptr);
     assert(queue.m_list.tail == nullptr);
     assert(queue.m_list.size == 0);
+    
+    return 0;
+}
+
+#elif defined(TEST8) // Test Queue::printQueue()
+//        What single specific particular one-thing is being tested?:
+//        What is expected?:
+//        What happens?:
+//#define MAKE_MEMBERS_PUBLIC
+#include"queue.h"
+int main() {
+    
+    Queue<std::string> queue;
+    queue.push("Feynman");
+    queue.push("Turing");
+    queue.push("Einstein");
+    queue.printQueue();         // expect Front Feynman Turing Einstein Rear
     
     return 0;
 }
