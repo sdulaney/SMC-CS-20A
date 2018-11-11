@@ -15,17 +15,21 @@
 		8D2BBE5D219401AB00808DA1 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D2BBE5C219401AB00808DA1 /* point.cpp */; };
 		8D2BBE61219401DC00808DA1 /* shark.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D2BBE60219401DC00808DA1 /* shark.cpp */; };
 		8D2BBE652194021100808DA1 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D2BBE642194021100808DA1 /* utils.cpp */; };
+		8DB37C322197B5810058BDF7 /* maze_lecture.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D2BBE572194015300808DA1 /* maze_lecture.txt */; };
+		8DB37C332197B5870058BDF7 /* maze.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D2BBE582194016E00808DA1 /* maze.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		8D2BBE422193FF1D00808DA1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				8DB37C332197B5870058BDF7 /* maze.txt in CopyFiles */,
+				8DB37C322197B5810058BDF7 /* maze_lecture.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
