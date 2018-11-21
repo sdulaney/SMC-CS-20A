@@ -30,11 +30,38 @@
 //        Backtracking is challenging, save it for the very very very last thing.
 //        Make sure the Looking aspect compiles and works first.
 void Player::update() {
-    
-    
-    /********************** TODO *************************/
-    
-    
+    if (m_look.isEmpty()) {
+        setState(State::STUCK);
+        return;
+    }
+    Point p = m_look.peek();
+    m_look.pop();
+    m_discovered.addToFront(p);
+    setPosition(p);
+    if (p == getAquarium()->getEndPoint()) {
+        setState(State::FREEDOM);
+        return;
+    }
+    Point west = Point(p.getX() - 1, p.getY());
+    if (getAquarium()->isCellOpen(west) && !_discovered(west)) {
+        m_discovered.addToFront(west);
+        m_look.push(west);
+    }
+    Point east = Point(p.getX() + 1, p.getY());
+    if (getAquarium()->isCellOpen(east) && !_discovered(east)) {
+        m_discovered.addToFront(east);
+        m_look.push(east);
+    }
+    Point north = Point(p.getX(), p.getY() - 1);
+    if (getAquarium()->isCellOpen(north) && !_discovered(north)) {
+        m_discovered.addToFront(north);
+        m_look.push(north);
+    }
+    Point south = Point(p.getX(), p.getY() + 1);
+    if (getAquarium()->isCellOpen(south) && !_discovered(south)) {
+        m_discovered.addToFront(south);
+        m_look.push(south);
+    }
 }
 
 
