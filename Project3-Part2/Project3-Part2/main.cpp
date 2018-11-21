@@ -655,6 +655,35 @@ int main() {
     return 0;
 }
 
+#elif defined(TEST26) // Test a custom maze with backtracking
+//        What single specific particular one-thing is being tested?:
+//        What is expected?:
+//        What happens?:
+#include"game.h"
+
+int main() {
+    
+    bool havePlayerBackTack = true; //Toggle player backtracking
+    
+    int frame_time_delay = 500;        //Effects game speed, shorter delay
+    //less time between frames, faster
+    //simulation when automating.
+    
+    bool clearScreen = true;        //Clear the console prior to drawing
+    //the next iteration of the game.
+    //If you wish to debug by printing
+    //to the console you may want to disable.
+    int num_sharks = 0;
+    
+    //Setup game
+    Game g("maze.txt", num_sharks, frame_time_delay, clearScreen, havePlayerBackTack);
+    
+    //Exectute game loop
+    g.play();
+    
+    return 0;
+}
+
 #else
 int main() {
     cout << "Hello World!" << endl;
