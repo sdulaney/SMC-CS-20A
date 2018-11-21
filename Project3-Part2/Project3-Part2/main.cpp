@@ -4,7 +4,7 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST20
+#define TEST21
 
 #ifdef TEST1 // Test List class
 //        What single specific particular one-thing is being tested?:
@@ -113,7 +113,7 @@ int main() {
     //the next iteration of the game.
     //If you wish to debug by printing
     //to the console you may want to disable.
-    int num_sharks =3;
+    int num_sharks =0;
     
     //Setup game
     Game g("maze.txt", num_sharks, frame_time_delay, clearScreen, havePlayerBackTack);
@@ -503,6 +503,35 @@ int main() {
     
     //Setup game
     Game g("maze_test5.txt", num_sharks, frame_time_delay, clearScreen, havePlayerBackTack);
+    
+    //Exectute game loop
+    g.play();
+    
+    return 0;
+}
+
+#elif defined(TEST21) // Test maze_test1.txt (same as maze_lecture.txt) with backtracking
+//        What single specific particular one-thing is being tested?:
+//        What is expected?:
+//        What happens?:
+#include"game.h"
+
+int main() {
+    
+    bool havePlayerBackTack = true; //Toggle player backtracking
+    
+    int frame_time_delay = 500;        //Effects game speed, shorter delay
+    //less time between frames, faster
+    //simulation when automating.
+    
+    bool clearScreen = true;        //Clear the console prior to drawing
+    //the next iteration of the game.
+    //If you wish to debug by printing
+    //to the console you may want to disable.
+    int num_sharks = 0;
+    
+    //Setup game
+    Game g("maze_test1.txt", num_sharks, frame_time_delay, clearScreen, havePlayerBackTack);
     
     //Exectute game loop
     g.play();
