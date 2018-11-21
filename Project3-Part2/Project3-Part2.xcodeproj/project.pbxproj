@@ -15,6 +15,11 @@
 		8D2BBE5D219401AB00808DA1 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D2BBE5C219401AB00808DA1 /* point.cpp */; };
 		8D2BBE61219401DC00808DA1 /* shark.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D2BBE60219401DC00808DA1 /* shark.cpp */; };
 		8D2BBE652194021100808DA1 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D2BBE642194021100808DA1 /* utils.cpp */; };
+		8D8AE18C21A5F50F008E23FC /* maze_test1.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D8AE18721A5F484008E23FC /* maze_test1.txt */; };
+		8D8AE18D21A5F513008E23FC /* maze_test2.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D8AE18821A5F48C008E23FC /* maze_test2.txt */; };
+		8D8AE18E21A5F516008E23FC /* maze_test3.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D8AE18921A5F492008E23FC /* maze_test3.txt */; };
+		8D8AE18F21A5F51A008E23FC /* maze_test4.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D8AE18A21A5F499008E23FC /* maze_test4.txt */; };
+		8D8AE19021A5F51E008E23FC /* maze_test5.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D8AE18B21A5F4A0008E23FC /* maze_test5.txt */; };
 		8DB37C322197B5810058BDF7 /* maze_lecture.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D2BBE572194015300808DA1 /* maze_lecture.txt */; };
 		8DB37C332197B5870058BDF7 /* maze.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D2BBE582194016E00808DA1 /* maze.txt */; };
 /* End PBXBuildFile section */
@@ -26,6 +31,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				8D8AE19021A5F51E008E23FC /* maze_test5.txt in CopyFiles */,
+				8D8AE18F21A5F51A008E23FC /* maze_test4.txt in CopyFiles */,
+				8D8AE18E21A5F516008E23FC /* maze_test3.txt in CopyFiles */,
+				8D8AE18D21A5F513008E23FC /* maze_test2.txt in CopyFiles */,
+				8D8AE18C21A5F50F008E23FC /* maze_test1.txt in CopyFiles */,
 				8DB37C332197B5870058BDF7 /* maze.txt in CopyFiles */,
 				8DB37C322197B5810058BDF7 /* maze_lecture.txt in CopyFiles */,
 			);
@@ -54,6 +64,11 @@
 		8D2BBE63219401FF00808DA1 /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
 		8D2BBE642194021100808DA1 /* utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
 		8D2BBE662194022400808DA1 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		8D8AE18721A5F484008E23FC /* maze_test1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = maze_test1.txt; sourceTree = "<group>"; };
+		8D8AE18821A5F48C008E23FC /* maze_test2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = maze_test2.txt; sourceTree = "<group>"; };
+		8D8AE18921A5F492008E23FC /* maze_test3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = maze_test3.txt; sourceTree = "<group>"; };
+		8D8AE18A21A5F499008E23FC /* maze_test4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = maze_test4.txt; sourceTree = "<group>"; };
+		8D8AE18B21A5F4A0008E23FC /* maze_test5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = maze_test5.txt; sourceTree = "<group>"; };
 		8DD6ED9521954819006D755C /* list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
 		8DD6ED9621954827006D755C /* studentinfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = studentinfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +103,11 @@
 		8D2BBE462193FF1D00808DA1 /* Project3-Part2 */ = {
 			isa = PBXGroup;
 			children = (
+				8D8AE18B21A5F4A0008E23FC /* maze_test5.txt */,
+				8D8AE18A21A5F499008E23FC /* maze_test4.txt */,
+				8D8AE18921A5F492008E23FC /* maze_test3.txt */,
+				8D8AE18821A5F48C008E23FC /* maze_test2.txt */,
+				8D8AE18721A5F484008E23FC /* maze_test1.txt */,
 				8D2BBE472193FF1D00808DA1 /* main.cpp */,
 				8DD6ED9521954819006D755C /* list.h */,
 				8DD6ED9621954827006D755C /* studentinfo.h */,
