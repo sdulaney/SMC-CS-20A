@@ -36,7 +36,6 @@ void Player::update() {
     }
     Point p = m_look.peek();
     m_look.pop();
-    m_discovered.addToFront(p);
     setPosition(p);
     if (p == getAquarium()->getEndPoint()) {
         setState(State::FREEDOM);
