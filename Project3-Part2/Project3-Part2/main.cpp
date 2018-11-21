@@ -4,9 +4,9 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST15
+#define TEST3
 
-#ifdef TEST1
+#ifdef TEST1 // Test List class
 //        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
@@ -28,7 +28,7 @@ int main() {
     return 0;
 }
 
-#elif defined(TEST2)
+#elif defined(TEST2) // Test Stack, Queue classes
 //        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
@@ -69,7 +69,7 @@ int main() {
     return 0;
 }
 
-#elif defined(TEST3) //Test the maze in lecture slides without backtracking
+#elif defined(TEST3) // Test the maze in lecture slides without backtracking
 //        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
@@ -98,7 +98,7 @@ int main() {
     return 0;
 }
 
-#elif defined(TEST4) //Test a custom maze without backtracking
+#elif defined(TEST4) // Test a custom maze without backtracking
 //        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
@@ -124,7 +124,7 @@ int main() {
     return 0;
 }
 
-#elif defined(TEST5) //Test lecture slide maze with backtracking
+#elif defined(TEST5) // Test lecture slide maze with backtracking
 //        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
