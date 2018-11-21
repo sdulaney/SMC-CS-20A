@@ -4,7 +4,7 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST3
+#define TEST16
 
 #ifdef TEST1 // Test List class
 //        What single specific particular one-thing is being tested?:
@@ -423,7 +423,7 @@ int main() {
     return 0;
 }
 
-#elif defined(TEST18) // Test maze_test3.txt without backtracking
+#elif defined(TEST18) // Test maze_test3.txt (there is no way to reach the exit) without backtracking
 //        What single specific particular one-thing is being tested?:
 //        What is expected?:
 //        What happens?:
