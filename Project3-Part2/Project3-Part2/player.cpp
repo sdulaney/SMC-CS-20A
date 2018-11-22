@@ -42,17 +42,54 @@ void Player::update() {
             setState(State::BACKTRACK);
             int btX = m_backTrack.peek().getX();
             int btY = m_backTrack.peek().getY();
-            while (!(btX == currX - 1 && btY == currY) && !(btX == currX + 1 && btY == currY) && !(btX == currX && btY == currY - 1) && !(btX == currX && btY == currY + 1)) {
-                m_btBufferQueue.push(m_backTrack.peek());
-                m_backTrack.pop();
-                btX = m_backTrack.peek().getX();
-                btY = m_backTrack.peek().getY();
+            while (!m_backTrack.isEmpty()) {
+                if ((btX == currX - 1 && btY == currY) || (btX == currX + 1 && btY == currY) || (btX == currX && btY == currY - 1) || (btX == currX && btY == currY + 1) || (btX == currX && btY == currY)) {
+                    m_btBufferStack.push(m_backTrack.peek());
+                    m_backTrack.pop();
+                }
+                else {
+                    m_btBufferQueue.push(m_backTrack.peek());
+                    m_backTrack.pop();
+                }
+                if (!m_backTrack.isEmpty()) {
+                    btX = m_backTrack.peek().getX();
+                    btY = m_backTrack.peek().getY();
+                }
+            }
+            Point posBeforeBacktrack = getPosition();
+            double minSqrDist = sqrDist(m_btBufferStack.peek(), getTargetPoint());
+            m_backTrack.push(m_btBufferStack.peek());
+            m_btBufferStack.pop();
+            while (!m_btBufferStack.isEmpty()) {
+                double nextSqrDist = sqrDist(m_btBufferStack.peek(), getTargetPoint());
+                if (nextSqrDist < minSqrDist) {
+                    minSqrDist = nextSqrDist;
+                    m_backTrack.push(m_btBufferStack.peek());
+                    m_btBufferStack.pop();
+                }
+                else {
+                    m_btBufferQueue.push(m_btBufferStack.peek());
+                    m_btBufferStack.pop();
+                }
             }
             setPosition(m_backTrack.peek());
+            if (posBeforeBacktrack == getPosition()) {
+                // The current point is closer to the target point than the correct point
+                m_btBufferQueue.push(m_backTrack.peek());
+                m_backTrack.pop();
+                setPosition(m_backTrack.peek());
+            }
+
+            // Push all points back onto m_backTrack by emptying m_btBufferStack, m_btBufferQueue
+            while (!m_btBufferStack.isEmpty()) {
+                m_backTrack.push(m_btBufferStack.peek());
+                m_btBufferStack.pop();
+            }
             while (!m_btBufferQueue.isEmpty()) {
                 m_backTrack.push(m_btBufferQueue.peek());
                 m_btBufferQueue.pop();
             }
+            
             return;
         }
         if (m_look.isEmpty()) {
