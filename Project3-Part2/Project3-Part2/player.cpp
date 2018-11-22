@@ -40,11 +40,19 @@ void Player::update() {
         }
         if (!(targetX == currX - 1 && targetY == currY) && !(targetX == currX + 1 && targetY == currY) && !(targetX == currX && targetY == currY - 1) && !(targetX == currX && targetY == currY + 1) && !(targetX == currX && targetY == currY)) {
             setState(State::BACKTRACK);
-            m_backTrack.pop();      // Remove Point on top of stack b/c it's equal to our current position
-            Point p = m_backTrack.peek();
-            m_backTrack.pop();
-            setPosition(p);
-            m_backTrack.push(p);
+            int btX = m_backTrack.peek().getX();
+            int btY = m_backTrack.peek().getY();
+            while (!(btX == currX - 1 && btY == currY) && !(btX == currX + 1 && btY == currY) && !(btX == currX && btY == currY - 1) && !(btX == currX && btY == currY + 1)) {
+                m_btBufferQueue.push(m_backTrack.peek());
+                m_backTrack.pop();
+                btX = m_backTrack.peek().getX();
+                btY = m_backTrack.peek().getY();
+            }
+            setPosition(m_backTrack.peek());
+            while (!m_btBufferQueue.isEmpty()) {
+                m_backTrack.push(m_btBufferQueue.peek());
+                m_btBufferQueue.pop();
+            }
             return;
         }
         if (m_look.isEmpty()) {
