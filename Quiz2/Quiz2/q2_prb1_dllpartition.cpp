@@ -29,20 +29,20 @@ void display(Node* node) {
 //function (main)
 Node* addToFront(Node* node, int x) {
     // If the list is empty
-    if (node == ___________) {
+    if (node == nullptr) {
         node = new Node;
         node->value = x;
-        node->next = ___________;
-        node->prev = ___________;
+        node->next = nullptr;
+        node->prev = nullptr;
     }
     else {
         Node *n = new Node;
         n->value = x;
-        n->next = ___________;
-        n->prev = ___________;
+        n->next = node;
+        n->prev = nullptr;
         
-        node->prev = ___________;
-        node = ___________;
+        node->prev = n;
+        node = n;
     }
     return node;
 }
