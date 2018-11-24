@@ -49,8 +49,30 @@ Node* addToFront(Node* node, int x) {
 
 
 Node* partition(Node *low, Node *high) {
-    
-    return nullptr;
+    Node* pNode = low;
+    int pivot = low->value;
+    bool lowBeforeHigh = true;
+    do {
+        while (low != high && low->value <= pivot) {
+            low = low->next;
+        }
+        if (low == high && low->value <= pivot) {
+            low = low->next;
+            lowBeforeHigh = false;
+        }
+        while (high->value > pivot) {
+            if (low == high) {
+                lowBeforeHigh = false;
+            }
+            high = high->prev;
+        }
+        if (lowBeforeHigh) {
+            swap(low->value, high->value);
+        }
+    } while (lowBeforeHigh);
+    swap(pNode->value, high->value);
+    pNode = high;
+    return pNode;
 }
 
 int main() {
