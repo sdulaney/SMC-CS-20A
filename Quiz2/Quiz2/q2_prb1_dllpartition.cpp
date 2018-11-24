@@ -70,6 +70,7 @@ int main() {
     head = addToFront(head, 35);
     head = addToFront(head, 12);
     head = addToFront(head, 4);
+    head = addToFront(head, 40);
     head = addToFront(head, 52);
     head = addToFront(head, 99);
     head = addToFront(head, 13);
