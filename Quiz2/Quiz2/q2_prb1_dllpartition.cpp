@@ -75,6 +75,15 @@ Node* partition(Node *low, Node *high) {
     return pNode;
 }
 
+void QuickSort(Node* low, Node* high) {
+    if (low != high && high != nullptr && low != high->next) {
+        Node* pivotNode;
+        pivotNode = partition(low, high);
+        QuickSort(low, pivotNode->prev);
+        QuickSort(pivotNode->next, high);
+    }
+}
+
 int main() {
     //Create an empty list
     Node* head = nullptr;
@@ -104,11 +113,15 @@ int main() {
     cout << "Element In The Linked List Are : ";
     display(head);
     
-    Node* pivot = partition(head, tail);
+//    Node* pivot = partition(head, tail);
+//
+//    if (pivot!=nullptr) cout <<"Pivot: "<< pivot->value << endl; // 30
+//
+//    cout << "Element In The Linked List Are : ";
+//    display(head); //4 1 12 13 30 52 40 99 77 35 47 56
     
-    if (pivot!=nullptr) cout <<"Pivot: "<< pivot->value << endl; // 30
-    
+    QuickSort(head, tail);
     cout << "Element In The Linked List Are : ";
-    display(head); //4 1 12 13 30 52 40 99 77 35 47 56
+    display(head); //1 4 12 13 30 35 40 47 52 56 77 99
     
 }
