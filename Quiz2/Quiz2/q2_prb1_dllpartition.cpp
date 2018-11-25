@@ -85,6 +85,7 @@ void QuickSort(Node* low, Node* high) {
 }
 
 int main() {
+    //Case 1: List is not sorted
     //Create an empty list
     Node* head = nullptr;
     
@@ -121,7 +122,105 @@ int main() {
 //    display(head); //4 1 12 13 30 52 40 99 77 35 47 56
     
     QuickSort(head, tail);
-    cout << "Element In The Linked List Are : ";
+    cout << "Element In The Linked List After QuickSort Are : ";
     display(head); //1 4 12 13 30 35 40 47 52 56 77 99
+    cout << endl;
+    
+    //Case 2: List is already sorted
+    //Create an empty list
+    Node* head2 = nullptr;
+    
+    //Add one node to the empty list
+    head2 = addToFront(head2, 99);
+    
+    //Reconcile the tail, only one node at this point
+    //so both the head and tail point to the same Node
+    Node* tail2 = head2;
+    
+    //Now any further additions to the front will not
+    //require any changes to the tail.
+    head2 = addToFront(head2, 77);
+    head2 = addToFront(head2, 56);
+    head2 = addToFront(head2, 52);
+    head2 = addToFront(head2, 47);
+    head2 = addToFront(head2, 40);
+    head2 = addToFront(head2, 35);
+    head2 = addToFront(head2, 30);
+    head2 = addToFront(head2, 13);
+    head2 = addToFront(head2, 12);
+    head2 = addToFront(head2, 4);
+    head2 = addToFront(head2, 1);
+    
+    cout << "Element In The Linked List Are : ";
+    display(head2);
+    QuickSort(head2, tail2);
+    cout << "Element In The Linked List After QuickSort Are : ";
+    display(head2); //1 4 12 13 30 35 40 47 52 56 77 99
+    cout << endl;
+    
+    //Case 3: List is in reverse order
+    //Create an empty list
+    Node* head3 = nullptr;
+    
+    //Add one node to the empty list
+    head3 = addToFront(head3, 1);
+    
+    //Reconcile the tail, only one node at this point
+    //so both the head and tail point to the same Node
+    Node* tail3 = head3;
+    
+    //Now any further additions to the front will not
+    //require any changes to the tail.
+    head3 = addToFront(head3, 4);
+    head3 = addToFront(head3, 12);
+    head3 = addToFront(head3, 13);
+    head3 = addToFront(head3, 30);
+    head3 = addToFront(head3, 35);
+    head3 = addToFront(head3, 40);
+    head3 = addToFront(head3, 47);
+    head3 = addToFront(head3, 52);
+    head3 = addToFront(head3, 56);
+    head3 = addToFront(head3, 77);
+    head3 = addToFront(head3, 99);
+    
+    cout << "Element In The Linked List Are : ";
+    display(head3);
+    QuickSort(head3, tail3);
+    cout << "Element In The Linked List After QuickSort Are : ";
+    display(head3); //1 4 12 13 30 35 40 47 52 56 77 99
+    cout << endl;
+
+    //Case 4: List contains duplicate elements
+    //Create an empty list
+    Node* head4 = nullptr;
+    
+    //Add one node to the empty list
+    head4 = addToFront(head4, 1);
+    
+    //Reconcile the tail, only one node at this point
+    //so both the head and tail point to the same Node
+    Node* tail4 = head4;
+    
+    //Now any further additions to the front will not
+    //require any changes to the tail.
+    head4 = addToFront(head4, 4);
+    head4 = addToFront(head4, 12);
+    head4 = addToFront(head4, 13);
+    head4 = addToFront(head4, 30);
+    head4 = addToFront(head4, 35);
+    head4 = addToFront(head4, 40);
+    head4 = addToFront(head4, 47);
+    head4 = addToFront(head4, 52);
+    head4 = addToFront(head4, 12);
+    head4 = addToFront(head4, 56);
+    head4 = addToFront(head4, 77);
+    head4 = addToFront(head4, 99);
+    
+    cout << "Element In The Linked List Are : ";
+    display(head4);
+    QuickSort(head4, tail4);
+    cout << "Element In The Linked List After QuickSort Are : ";
+    display(head4); //1 4 12 12 13 30 35 40 47 52 56 77 99
+    cout << endl;
     
 }
