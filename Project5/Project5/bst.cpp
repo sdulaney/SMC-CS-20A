@@ -171,13 +171,12 @@ BinarySearchTree::Node* BinarySearchTree::_search(Node *node, int value) const {
 // Height of a binary tree is the height of the largest subtree + 1
 // An empty tree has height 0;
 int    BinarySearchTree::_height(Node* node) const {
-    
-    // *********** TODO *************
-    
-    
-    
-    return 0;
-    
+    // Base case: an empty tree has height 0
+    if (node == nullptr) {
+        return 0;
+    }
+    // Return the max height between the left and right subtrees plus 1 for the current node
+    return std::max(_height(node->left), _height(node->right)) + 1;
 }
 // BinarySearchTree::_min recursively obtain the node with the minimum value
 BinarySearchTree::Node*    BinarySearchTree::_minNode(Node *node) const  {
