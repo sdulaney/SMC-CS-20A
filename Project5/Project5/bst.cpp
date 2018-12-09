@@ -217,13 +217,15 @@ BinarySearchTree::Node*    BinarySearchTree::_maxNode(Node *node) const {
 //        print value
 //        traverse left
 void BinarySearchTree::_printTree(Node *node, int space = 0) const {
-    
-    // *********** TODO *************
-    
-    
-    
-    
-    
+    if (node == nullptr) {
+        return;
+    }
+    _printTree(node->right, space + 5);
+    for (int i = 0; i < space; i++) {
+        std::cout << " ";
+    }
+    std::cout << node->value << std::endl;
+    _printTree(node->left, space + 5);
 }
 
 
