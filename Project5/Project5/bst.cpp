@@ -161,12 +161,18 @@ BinarySearchTree::Node* BinarySearchTree::_insert(Node *node, int value) {
 
 // BinarySearchTree::_search recursively searches the tree for value.
 BinarySearchTree::Node* BinarySearchTree::_search(Node *node, int value) const {
-    
-    // *********** TODO *************
-    
-    
-    
-    return nullptr;
+    if (node == nullptr) {
+        return node;
+    }
+    else if (value == node->value) {
+        return node;
+    }
+    else if (value < node->value) {
+        return _search(node->left, value);
+    }
+    else {      // value > node->value
+        return _search(node->right, value);
+    }
 }
 
 // BinarySearchTree::_height
