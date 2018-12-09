@@ -114,11 +114,12 @@ void BinarySearchTree::_inorder(Node* node, std::function<void(Node*)> process) 
 }
 
 void BinarySearchTree::_postorder(Node* node, std::function<void(Node*)> process) {
-    
-    // *********** TODO *************
-    
-    
-    
+    if (node == nullptr) {
+        return;
+    }
+    _postorder(node->left, process);
+    _postorder(node->right, process);
+    process(node);
 }
 
 void BinarySearchTree::_preorder(Node* node, std::function<void(Node*)> process) {
