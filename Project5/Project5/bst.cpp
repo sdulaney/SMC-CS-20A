@@ -140,21 +140,21 @@ BinarySearchTree::Node* BinarySearchTree::_insert(Node *node, int value) {
     }
     if (value < node->value) {
         if (node->left != nullptr) {
-            return _insert(node->left, value);
+            _insert(node->left, value);
         }
         else {
             node->left = new Node(value, nullptr, nullptr);
-            return node->left;
         }
+        return node;
     }
     // else value > node->value
     if (node->right != nullptr) {
-        return _insert(node->right, value);
+        _insert(node->right, value);
     }
     else {
         node->right = new Node(value, nullptr, nullptr);
-        return node->right;
     }
+    return node;
 }
 
 // BinarySearchTree::_search recursively searches the tree for value.
@@ -189,13 +189,10 @@ BinarySearchTree::Node*    BinarySearchTree::_minNode(Node *node) const  {
 
 // BinarySearchTree::_max recursively obtain the node with the minimum value
 BinarySearchTree::Node*    BinarySearchTree::_maxNode(Node *node) const {
-    
-    // *********** TODO *************
-    
-    
-    
-    
-    return nullptr;
+    if (node->right == nullptr) {
+        return node;
+    }
+    return _maxNode(node->right);
 }
 
 // BinarySearchTree::_printTree
