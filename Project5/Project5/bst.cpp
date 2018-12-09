@@ -132,13 +132,29 @@ void BinarySearchTree::_preorder(Node* node, std::function<void(Node*)> process)
 // BinarySearchTree::_insert recursively inserts into the BST according
 // to the rules of the BST.
 BinarySearchTree::Node* BinarySearchTree::_insert(Node *node, int value) {
-    
-    // *********** TODO *************
-    
-    
-    
-    
-    return nullptr;
+    if (node == nullptr) {
+        return new Node(value, nullptr, nullptr);
+    }
+    if (value == node->value) {
+        return node;
+    }
+    if (value < node->value) {
+        if (node->left != nullptr) {
+            return _insert(node->left, value);
+        }
+        else {
+            node->left = new Node(value, nullptr, nullptr);
+            return node->left;
+        }
+    }
+    // else value > node->value
+    if (node->right != nullptr) {
+        return _insert(node->right, value);
+    }
+    else {
+        node->right = new Node(value, nullptr, nullptr);
+        return node->right;
+    }
 }
 
 // BinarySearchTree::_search recursively searches the tree for value.
