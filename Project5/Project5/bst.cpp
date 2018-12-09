@@ -178,15 +178,13 @@ int    BinarySearchTree::_height(Node* node) const {
     // Return the max height between the left and right subtrees plus 1 for the current node
     return std::max(_height(node->left), _height(node->right)) + 1;
 }
+
 // BinarySearchTree::_min recursively obtain the node with the minimum value
 BinarySearchTree::Node*    BinarySearchTree::_minNode(Node *node) const  {
-    
-    // *********** TODO *************
-    
-    
-    
-    
-    return nullptr;
+    if (node->left == nullptr) {
+        return node;
+    }
+    return _minNode(node->left);
 }
 
 // BinarySearchTree::_max recursively obtain the node with the minimum value
