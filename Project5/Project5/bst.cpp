@@ -122,11 +122,12 @@ void BinarySearchTree::_postorder(Node* node, std::function<void(Node*)> process
 }
 
 void BinarySearchTree::_preorder(Node* node, std::function<void(Node*)> process) {
-    
-    // *********** TODO *************
-    
-    
-    
+    if (node == nullptr) {
+        return;
+    }
+    process(node);
+    _preorder(node->left, process);
+    _preorder(node->right, process);
 }
 
 // BinarySearchTree::_insert recursively inserts into the BST according
