@@ -260,15 +260,52 @@ void BinarySearchTree::_printTree(Node *node, int space = 0) const {
 // the height or max depth of the either subtree. I'll leave it to you to reason about this.
 //
 BinarySearchTree::Node*    BinarySearchTree::_deleteNode(Node *node, int value) {
-    
-    // *********** TODO *************
-    
-    
-    
-    
-    
-    return nullptr; // parent node can update reference
-    
+    // Base case
+    if (node == nullptr) {
+        return node;
+    }
+    // If the value to be deleted is less than the current node's value, then
+    // delete it from the left subtree
+    if (value < node->value) {
+        node->left = _deleteNode(node->left, value);
+    }
+    // If the value to be deleted is greater than the current node's value, then
+    // delete it from the right subtree
+    else if (value > node->value) {
+        node->right = _deleteNode(node->right, value);
+    }
+    // Otherwise the value to be deleted is equal to the current node's value, so
+    // delete the current node
+    else {
+        // Case 1: our node is a leaf
+        if (node->left == nullptr && node->right == nullptr) {
+            delete node;
+            return nullptr;
+        }
+        // Case 2: our node has one child
+        if (node->left != nullptr && node->right == nullptr) {
+            Node* temp = node->left;
+            delete node;
+            return temp;
+        }
+        if (node->right != nullptr && node->left == nullptr) {
+            Node* temp = node->right;
+            delete node;
+            return temp;
+        }
+        // Case 3: our node has two children
+        if (_height(node->left) > _height(node->right)) {
+            Node* maxNode = _maxNode(node->left);
+            node->value = maxNode->value;
+            node->left = _deleteNode(node->left, maxNode->value);
+        }
+        else {
+            Node* minNode = _minNode(node->right);
+            node->value = minNode->value;
+            node->right = _deleteNode(node->right, minNode->value);
+        }
+    }
+    return node;
 }
 
 
