@@ -2,6 +2,7 @@
 #include<functional>
 #include<iostream>
 #include<assert.h>
+#include<algorithm>
 
 // Node implementation: Implemented
 struct BinarySearchTree::Node {
