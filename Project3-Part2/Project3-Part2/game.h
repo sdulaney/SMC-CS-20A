@@ -4,7 +4,7 @@
 
 class Aquarium;
 
-const int MAX_STEPS = 2000;
+const int MAX_STEPS = 200000;
 
 class Game {
 public:
