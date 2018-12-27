@@ -4,7 +4,7 @@
 using namespace std;
 
 // DEFINE YOUR TEST
-#define TEST21
+#define TEST26
 
 #ifdef TEST1 // Test List class
 //        What single specific particular one-thing is being tested?:
@@ -665,7 +665,7 @@ int main() {
     
     bool havePlayerBackTack = true; //Toggle player backtracking
     
-    int frame_time_delay = 500;        //Effects game speed, shorter delay
+    int frame_time_delay = 10;        //Effects game speed, shorter delay
     //less time between frames, faster
     //simulation when automating.
     
